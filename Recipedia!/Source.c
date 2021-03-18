@@ -6,3 +6,5 @@ int main(void)
 	printf("Hello world!\n");
 	exit(EXIT_SUCCESS);
 }
+
+//hello
