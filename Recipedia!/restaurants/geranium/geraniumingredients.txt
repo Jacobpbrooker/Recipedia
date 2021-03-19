@@ -1,0 +1,9 @@
+geraniumingredient1
+15
+kg
+geraniumingredient2
+2
+tsp
+geraniumingredient3
+5
+cups
