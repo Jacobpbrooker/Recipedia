@@ -1,0 +1,3 @@
+restaurants/mugaritz/mugaritzrestaurant.txt
+restaurants/mugaritz/mugaritzingredients.txt
+restaurants/mugaritz/mugaritzinstructions.txt
