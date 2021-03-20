@@ -151,7 +151,7 @@ PRESTAURANT returnRestaurant(char* fileControlDoc) // there is so many magic num
 	}
 
 	// this is broken
-	returnRestaurant->resturantName = restaurantName;
+	returnRestaurant->restaurantName = restaurantName;
 	returnRestaurant->headChef = headChef;
 	returnRestaurant->restaurantSypnopsis = sypnopsis;
 	strcpy_s(&returnRestaurant->specialityMenu[0], MAXSTRINGLENGTH, firstSpeciality);
@@ -181,7 +181,7 @@ PRESTAURANTNODE createRestaurant(PRESTAURANTNODE restaurantListPointer, PRESTAUR
 	}
 
 	//tempRestaurant = restaurant;
-	tempRestaurant->resturantName = restaurant->resturantName;
+	tempRestaurant->restaurantName = restaurant->restaurantName;
 	tempRestaurant->headChef = restaurant->headChef;
 	tempRestaurant->restaurantSypnopsis = restaurant->restaurantSypnopsis;
 	// Put everything into a new, temporary struct

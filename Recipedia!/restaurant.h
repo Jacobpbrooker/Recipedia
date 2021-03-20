@@ -9,7 +9,7 @@
 
 
 typedef struct restaurant {								// restaurants will be stored individually in a linked list, with pointers to head of linked lists ingredients and instructions
-	char* resturantName;								// name of the restaurant
+	char* restaurantName;								// name of the restaurant
 	char* headChef;										// name of the head chef of the restaurant
 	char* restaurantSypnopsis;							// brief sypnopsis including location and awards, maybe famous people who have dined there - basically fun facts
 	char specialityMenu[MENUSIZE][MAXSTRINGLENGTH];		// multi dimensional array for 3 specialty items (char array for each)
