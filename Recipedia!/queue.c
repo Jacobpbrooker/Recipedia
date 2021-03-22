@@ -10,8 +10,28 @@
 #define INSTRUCTIONQUEUEFILE "instructionList.txt"
 #define INGREDIENTLINES 3
 
-//// free functions
-//
+// free functions (worry about after)
+//void freeNode(PRESTAURANTNODE);
+void freeIngredientQueue(PINGREDIENTQUEUE queue) // this gets called last right before next loop of save
+{
+	free(queue);
+}
+
+void freeIngredient(PINGREDIENT ingredient) // this should get called while i loop the save
+{
+	free(ingredient);
+}
+
+void freeInstructionQueue(PINSTRUCTIONQUEUE queue)
+{
+	free(queue);
+}
+
+void freeInstruction(PINSTRUCTION instruction)
+{
+	free(instruction);
+}
+
 //void freeQueue(PQUEUE queue)
 //{
 //	free(queue);											// free the queue
