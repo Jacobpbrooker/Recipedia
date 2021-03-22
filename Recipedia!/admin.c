@@ -71,7 +71,7 @@ void adminMode(PRESTAURANTNODE restaurantList)
 {
 	int userSelection = 1;
 	char restaurantDelete[RESTAURANTNAME];
-	char* testRestaurantDelete = "arpegetestname\0";
+	char* testRestaurantDelete = "mirazurtestname3\0";
 	do {
 		displayMenu();
 		//scanf_s("%d", &userSelection);
@@ -97,40 +97,35 @@ void adminMode(PRESTAURANTNODE restaurantList)
 
 PRESTAURANTNODE deleteRestaurant(PRESTAURANTNODE restaurantList, char* restaurant)
 {
-	return recursiveFindAndDeleteRestaurant(restaurantList, restaurant, restaurantList);
+	return recursiveFindAndDeleteRestaurant(restaurantList, restaurant);
 }
 
 
-PRESTAURANTNODE recursiveFindAndDeleteRestaurant(PRESTAURANTNODE restaurantNode, char* restaurant, PRESTAURANTNODE previousNode)
+PRESTAURANTNODE recursiveFindAndDeleteRestaurant(PRESTAURANTNODE currentNode, char* restaurant)
 {
-	PRESTAURANTNODE tempNode = restaurantNode;
-	
-	if (restaurantNode == NULL)	// exit condition
+	if (currentNode == NULL || currentNode->nextNode == NULL)	// exit condition
 	{
 		return;
 	}
-
-
-	if (strcmp(restaurantNode->restaurant.restaurantName, restaurant) == 0)			// node is head of list (working)
+	if (strcmp(currentNode->restaurant.restaurantName, restaurant) == 0)			// node is head of list (working)
 	{
-		restaurantNode = tempNode->nextNode;
+		PRESTAURANTNODE tempNode = currentNode;
+		currentNode = tempNode->nextNode;
 		free(tempNode);
-		return restaurantNode;
+		return currentNode;
 	}
-	else if (strcmp(restaurantNode->nextNode->restaurant.restaurantName, restaurant) == 0) // searched for node is next node
+	else if (strcmp(currentNode->nextNode->restaurant.restaurantName, restaurant) == 0) // searched for node is next node
 	{
-		// connect current node to next->next node
-		// free node at tempnode->next
-		// return the list? that doesnt make sense
-		previousNode->nextNode->nextNode = restaurantNode->nextNode->nextNode->nextNode; // this is working but there has to be a better way
-		free(tempNode->nextNode); // this is not working its freeing the wrong value
-		return restaurantNode;
+		PRESTAURANTNODE deleteNode = currentNode->nextNode;
+		currentNode->nextNode = currentNode->nextNode->nextNode; 
+		free(deleteNode); 
+		return currentNode;
 	}
 	else {
-		recursiveFindAndDeleteRestaurant(restaurantNode->nextNode, restaurant, restaurantNode);
+		recursiveFindAndDeleteRestaurant(currentNode->nextNode, restaurant, currentNode);
 	}
 
-	return tempNode;
+	return currentNode;
 }
 
 bool addRestaurant(PRESTAURANTNODE restaurantList)

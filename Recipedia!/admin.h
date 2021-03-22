@@ -7,7 +7,7 @@ bool returnAdminConfirmation(unsigned char*, int);
 // admin functionality
 void adminMode(PRESTAURANTNODE);
 PRESTAURANTNODE deleteRestaurant(PRESTAURANTNODE, char*);
-PRESTAURANTNODE recursiveFindAndDeleteRestaurant(PRESTAURANTNODE, char*, PRESTAURANTNODE);
+PRESTAURANTNODE recursiveFindAndDeleteRestaurant(PRESTAURANTNODE, char*);
 bool addRestaurant(PRESTAURANTNODE);
 
 //admin displays
