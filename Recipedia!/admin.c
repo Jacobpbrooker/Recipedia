@@ -8,6 +8,8 @@
 
 #define ADMINCODE 0x99										// this makes the admin code 1001 1001
 #define RESTAURANTNAME 50
+#define MAXINPUT 150
+
 unsigned char* convertCharToBits(char* adminCode, int codeLength)
 {
 	unsigned char* adminBitShiftCode;
@@ -69,9 +71,9 @@ bool returnAdminConfirmation(unsigned char* commandLineCode, int codeLength)
 
 void adminMode(PRESTAURANTNODE restaurantList)
 {
-	int userSelection = 1;
+	int userSelection = 2;
 	char restaurantDelete[RESTAURANTNAME];
-	char* testRestaurantDelete = "mirazurtestname3\0";
+	char* testRestaurantDelete = "maidotestname3\0";
 	do {
 		displayMenu();
 		//scanf_s("%d", &userSelection);
@@ -81,12 +83,14 @@ void adminMode(PRESTAURANTNODE restaurantList)
 			printf("You have selected remove restaurant\n");
 			printf("Enter name of restaurant to be deleted\n");
 			printf("Restuarant - ");
-			restaurantList = deleteRestaurant(restaurantList, testRestaurantDelete);
+			//restaurantList = deleteRestaurant(restaurantList, testRestaurantDelete);
 			//scanf_s("%s", restaurantDelete, RESTAURANTNAME);
 			//find and delete(free) the node on the linked list
 
 			break;
 		case 2:
+			printf("You have selected add new restaurant\n");
+			addRestaurant(restaurantList);
 			break;
 		default:
 			break;
@@ -105,13 +109,13 @@ PRESTAURANTNODE recursiveFindAndDeleteRestaurant(PRESTAURANTNODE currentNode, ch
 {
 	if (currentNode == NULL || currentNode->nextNode == NULL)	// exit condition
 	{
-		return;
+		return NULL;
 	}
-	if (strcmp(currentNode->restaurant.restaurantName, restaurant) == 0)			// node is head of list (working)
+	if (strcmp(currentNode->restaurant.restaurantName, restaurant) == 0)			// node is head of list (not working)
 	{
-		PRESTAURANTNODE tempNode = currentNode;
-		currentNode = tempNode->nextNode;
-		free(tempNode);
+		PRESTAURANTNODE tempnode = currentNode;
+		currentNode = tempnode->nextNode;
+		free(tempnode);
 		return currentNode;
 	}
 	else if (strcmp(currentNode->nextNode->restaurant.restaurantName, restaurant) == 0) // searched for node is next node
@@ -124,13 +128,18 @@ PRESTAURANTNODE recursiveFindAndDeleteRestaurant(PRESTAURANTNODE currentNode, ch
 	else {
 		recursiveFindAndDeleteRestaurant(currentNode->nextNode, restaurant, currentNode);
 	}
-
-	return currentNode;
 }
 
-bool addRestaurant(PRESTAURANTNODE restaurantList)
+void addRestaurant(PRESTAURANTNODE restaurantList)
 {
+	PRESTAURANTNODE tempNode = restaurantList;
 
+	while (tempNode->nextNode != NULL)
+	{
+		tempNode = tempNode->nextNode;
+	}
+
+	tempNode->nextNode = createRestaurant(tempNode->nextNode, returnNewRestaurant());
 }
 
 void displayMenu(void)
@@ -141,3 +150,4 @@ void displayMenu(void)
 	printf("2 - Add Restaurant\n");
 	printf("Selection - ");
 }
+

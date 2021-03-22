@@ -12,6 +12,8 @@
 #define FILENAMELENGTH 50
 #define INGREDIENTQUEUEFILE "ingredientList.txt"
 #define INSTRUCTIONQUEUEFILE "instructionList.txt"
+#define MAXINPUT 150
+#define MAXMENUITEM 100
 
 PRESTAURANT returnRestaurant(char* fileControlDoc) // there is so many magic numbers here
 {
@@ -192,10 +194,6 @@ PRESTAURANTNODE createRestaurant(PRESTAURANTNODE restaurantListPointer, PRESTAUR
 	tempRestaurant->ingredientQueueHead = restaurant->ingredientQueueHead;
 	tempRestaurant->instructionQueueHead = restaurant->instructionQueueHead;
 
-
-	//tempRestaurant->ingredientQueueHead = loadIngredientQueue(INGREDIENTQUEUEFILE);
-	//tempRestaurant->instructionQueueHead = loadInstructionQueue(INSTRUCTIONQUEUEFILE);
-
 	// Push task to linked list
 	// I think this push function is pushing to the head of the list instead of the back
 	// I can probably fix it by search for the end of the linked list and then passing that into the function
@@ -203,36 +201,6 @@ PRESTAURANTNODE createRestaurant(PRESTAURANTNODE restaurantListPointer, PRESTAUR
 
 	return restaurantListPointer;
 }
-
-
-//PRESTAURANTNODE createRestaurant(PRESTAURANTNODE restaurantListPointer, char* restaurantName, char* headChef, char* sypnopsis, char* firstSpecialty, char* secondSpecialty, char* thirdSpeciality) 
-//{
-//	PRESTAURANT tempRestaurant = (PRESTAURANT)malloc(sizeof(RESTAURANT));
-//
-//	if (!tempRestaurant) {										// If memory was unsuccessfully allocated 
-//		printf("Error found in memory allocation\n");
-//		exit(EXIT_FAILURE);												// exit with code -1
-//	}
-//
-//	// Put everything into a new, temporary struct
-//	tempRestaurant->resturantName = restaurantName;
-//	tempRestaurant->headChef = headChef;
-//	tempRestaurant->restaurantSypnopsis = sypnopsis;
-//	
-//	strcpy_s(tempRestaurant->specialityMenu[0], MAXSTRINGLENGTH, firstSpecialty);
-//	strcpy_s(tempRestaurant->specialityMenu[1], MAXSTRINGLENGTH, secondSpecialty);
-//	strcpy_s(tempRestaurant->specialityMenu[2], MAXSTRINGLENGTH, thirdSpeciality);
-//
-//	tempRestaurant->ingredientQueueHead = loadIngredientQueue(INGREDIENTQUEUEFILE);
-//	tempRestaurant->instructionQueueHead = loadInstructionQueue(INSTRUCTIONQUEUEFILE);
-//
-//	// Push task to linked list
-//	// I think this push function is pushing to the head of the list instead of the back
-//	// I can probably fix it by search for the end of the linked list and then passing that into the function
-//	push(&restaurantListPointer, *tempRestaurant);
-//
-//	return restaurantListPointer;
-//}
 
 void push(PRESTAURANTNODE* PassedData, RESTAURANT NewTask) {
 	PRESTAURANTNODE taskNode = newNode(NewTask);
@@ -259,4 +227,92 @@ PRESTAURANTNODE fetchNextNode(PRESTAURANTNODE restaurantNode)
 	return restaurantNode->nextNode;
 }
 
+PRESTAURANT returnNewRestaurant(void)
+{
+	PRESTAURANT newRestaurant = (PRESTAURANT)malloc(sizeof(PRESTAURANT));
+
+	newRestaurant->restaurantName = (char*)malloc(MAXINPUT);
+	newRestaurant->headChef = (char*)malloc(MAXINPUT);
+	newRestaurant->restaurantSypnopsis = (char*)malloc(MAXINPUT);
+
+	char name[MAXINPUT];
+	char chef[MAXINPUT];
+	char sypnopsis[MAXINPUT];
+	char one[MAXINPUT];
+	char two[MAXINPUT];
+	char three[MAXINPUT];
+
+	printf("Please enter restaurant name - ");
+	fgets(name, MAXINPUT, stdin);
+
+	printf("Please enter chef name - ");
+	fgets(chef, MAXINPUT, stdin);
+
+	printf("Please enter restaurant sypnopsis - ");
+	fgets(sypnopsis, MAXINPUT, stdin);
+
+	printf("Please enter first menu item - ");
+	fgets(one, MAXINPUT, stdin);
+
+	printf("Please enter second menu item - ");
+	fgets(two, MAXINPUT, stdin);
+
+	printf("Please enter third menu item - ");
+	fgets(three, MAXINPUT, stdin);
+
+	for (unsigned int i = 0; i < strlen(name); i++)
+	{
+		if (name[i] == '\n')
+		{
+			name[i] = '\0';
+		}
+	}
+	for (unsigned int i = 0; i < strlen(chef); i++)
+	{
+		if (chef[i] == '\n')
+		{
+			chef[i] = '\0';
+		}
+	}
+	for (unsigned int i = 0; i < strlen(sypnopsis); i++)
+	{
+		if (sypnopsis[i] == '\n')
+		{
+			sypnopsis[i] = '\0';
+		}
+	}
+	for (unsigned int i = 0; i < strlen(one); i++)
+	{
+		if (one[i] == '\n')
+		{
+			one[i] = '\0';
+		}
+	}
+	for (unsigned int i = 0; i < strlen(two); i++)
+	{
+		if (two[i] == '\n')
+		{
+			two[i] = '\0';
+		}
+	}
+	for (unsigned int i = 0; i < strlen(three); i++)
+	{
+		if (three[i] == '\n')
+		{
+			three[i] = '\0';
+		}
+	}
+
+	strcpy_s(newRestaurant->restaurantName, MAXINPUT, name);
+	strcpy_s(newRestaurant->headChef, MAXINPUT, chef);
+	strcpy_s(newRestaurant->restaurantSypnopsis, MAXINPUT, sypnopsis);
+	strcpy_s(newRestaurant->specialityMenu[0], MAXMENUITEM, one);
+	strcpy_s(newRestaurant->specialityMenu[1], MAXMENUITEM, two);
+	strcpy_s(newRestaurant->specialityMenu[2], MAXMENUITEM, three);
+
+	newRestaurant->ingredientQueueHead = initializeIngredientQueue();
+	newRestaurant->instructionQueueHead = initalizeInstructionQueue();
+
+	return newRestaurant;
+}
 
