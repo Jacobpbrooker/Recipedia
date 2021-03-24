@@ -30,6 +30,9 @@
     <ClCompile Include="SaveLoad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="search.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="admin.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SaveLoad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="search.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

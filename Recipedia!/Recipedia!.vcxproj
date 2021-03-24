@@ -143,6 +143,7 @@
     <ClCompile Include="queue.c" />
     <ClCompile Include="restaurant.c" />
     <ClCompile Include="SaveLoad.c" />
+    <ClCompile Include="search.c" />
     <ClCompile Include="Source.c" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="queue.h" />
     <ClInclude Include="restaurant.h" />
     <ClInclude Include="SaveLoad.h" />
+    <ClInclude Include="search.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
