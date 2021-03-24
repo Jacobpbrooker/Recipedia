@@ -9,7 +9,7 @@
 
 
 typedef struct restaurant {								// restaurants will be stored individually in a linked list, with pointers to head of linked lists ingredients and instructions
-	char* restaurantName;								// name of the restaurant
+	char* resturantName;								// name of the restaurant
 	char* headChef;										// name of the head chef of the restaurant
 	char* restaurantSypnopsis;							// brief sypnopsis including location and awards, maybe famous people who have dined there - basically fun facts
 	char specialityMenu[MENUSIZE][MAXSTRINGLENGTH];		// multi dimensional array for 3 specialty items (char array for each)
@@ -20,7 +20,7 @@ typedef struct restaurant {								// restaurants will be stored individually in
 typedef struct restaurantNode {							// this will be used for encapsulation of the restaurant struct and the next node
 	struct restaurant restaurant;						// this can be passed into function as the head of the list
 	struct restaurantNode* nextNode;					// this is a prototype I may just use the restaurant struct and have the nextNode in that struct 
-}RESTAURANTNODE, * PRESTAURANTNODE;
+}RESTAURANTNODE, *PRESTAURANTNODE;
 
 
 /*RESTAURANTNODE createRestaurant(PRESTAURANTNODE, char*, char*, char*, char*, char*, char*);*/

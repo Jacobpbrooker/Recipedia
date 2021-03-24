@@ -1,5 +1,4 @@
 #pragma once
-#include <stdbool.h>
 
 #define MAXSTRINGLENGTH 100
 #define MAXINSTRUCTIONLENGTH 1000
