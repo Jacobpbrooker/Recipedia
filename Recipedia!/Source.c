@@ -8,12 +8,17 @@
 #include "restaurant.h"
 #include "SaveLoad.h"
 
-#define RECIPEDIALOADFILE "restaurants/toptenrestaurants.txt"
+#define RECIPEDIADIRECTORY "restaurants/toptenrestaurants.txt"
 #define MAXUSERNAME 50
 
 int main(int argc, char* argv[])
 {
-	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIALOADFILE);
+	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
+
+	if (!saveFile(restaurantList, RECIPEDIADIRECTORY))
+		exit(EXIT_FAILURE);
+
+	exit(EXIT_SUCCESS);
 
 	bool adminAccess = returnAdminConfirmation(argv[1], strlen(argv[1]));
 

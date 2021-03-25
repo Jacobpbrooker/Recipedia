@@ -8,6 +8,7 @@
 
 #define FILENAME "restaurantList.txt"
 
+#define INGREDIENTLINES 3
 #define RESTAURANTLINES 6
 #define MAXSTRINGLENGTH 100
 #define NUMBEROFRESTAURANTS 10
@@ -39,6 +40,7 @@ PRESTAURANTNODE loadRestaurants(char* filename)
 			lines++;
 		}
 	}
+
 	fseek(fp, 0, SEEK_SET);
 
 	for (int i = 0; i < lines; i++)
@@ -87,7 +89,7 @@ bool saveFile(PRESTAURANTNODE list, char* filename)
 
 	if (fp == NULL)
 	{
-		fprintf(stderr, "File failed to open, exiting\n");
+		fprintf(stderr, "File - %s failed to open, exiting\n", filename);
 		exit(EXIT_FAILURE);
 	}
 
@@ -103,6 +105,7 @@ bool saveFile(PRESTAURANTNODE list, char* filename)
 			lines++;
 		}
 	}
+
 	fseek(fp, 0, SEEK_SET);
 
 	for (int i = 0; i < lines; i++)
@@ -118,61 +121,18 @@ bool saveFile(PRESTAURANTNODE list, char* filename)
 			}
 		}
 
-		// I could call three different functions
+		// Save the specific restaurant by using the text file directory
 		saveRestaurantInfo(list, getRestaurantFileName(restaurantFiles[i]));
 		saveIngredients(list, getIngredientsFileName(restaurantFiles[i]));
 		saveInstructions(list, getInstructionsFileName(restaurantFiles[i]));
-		// or call one function three times
+		
+		// Move the list to the next node
+		list = list->nextNode;
 	}
 
 	fclose(fp);
 
-	return EXIT_SUCCESS;
-}
-
-void saveRestaurant(PRESTAURANTNODE list, char* filename, DIRECTORYTYPE dir)
-{
-	if (dir == restaurantDir)
-	{
-		FILE* fp;
-		errno_t fileError = fopen_s(&fp, filename, "w");		// this needs to be write maybe
-
-		if (fp == NULL)
-		{
-			fprintf(stderr, "File failed to open, exiting\n");
-			exit(EXIT_FAILURE);
-		}
-		
-		PRESTAURANTNODE tempList = (PRESTAURANTNODE)malloc(sizeof(PRESTAURANTNODE));
-
-		if (!tempList)
-		{
-			fprintf(stderr, "Failed to allocate memory for RestaurantList, exiting\n");
-			exit(EXIT_FAILURE);
-		}
-
-		tempList = list;
-
-		//tempList = searchForNode(name)
-
-		fprintf(fp, "%s\n", tempList->restaurant.restaurantName);
-		fprintf(fp, "%s\n", tempList->restaurant.headChef);
-		fprintf(fp, "%s\n", tempList->restaurant.restaurantSypnopsis);
-		fprintf(fp, "%s\n", tempList->restaurant.specialityMenu[0]);
-		fprintf(fp, "%s\n", tempList->restaurant.specialityMenu[1]);
-		fprintf(fp, "%s\n", tempList->restaurant.specialityMenu[2]);
-	}
-	else if (dir == ingredientsDir)
-	{
-
-	}
-	else if (dir == instructionsDir)
-	{
-
-	}
-
-
-	free(filename);
+	return true;
 }
 
 char* getRestaurantFileName(char* filename)
@@ -180,13 +140,13 @@ char* getRestaurantFileName(char* filename)
 	FILE* fp;
 	errno_t fileError = fopen_s(&fp, filename, "r");
 
-	char* restaurantInfo = (char*)malloc(MAXSTRINGLENGTH);
-	char* ingredientInfo = (char*)malloc(MAXSTRINGLENGTH);
-	char* instructionInfo = (char*)malloc(MAXSTRINGLENGTH);
+	char* restaurantInfo = (char*)malloc(sizeof(char) * MAXSTRINGLENGTH);
+	char* ingredientInfo = (char*)malloc(sizeof(char) * MAXSTRINGLENGTH);
+	char* instructionInfo = (char*)malloc(sizeof(char) * MAXSTRINGLENGTH);
 
 	if (fp == NULL)
 	{
-		fprintf(stderr, "File failed to open, exiting\n");
+		fprintf(stderr, "File - %s failed to open, exiting\n", filename);
 		exit(EXIT_FAILURE);
 	}
 
@@ -217,7 +177,7 @@ char* getIngredientsFileName(char* filename)
 
 	if (fp == NULL)
 	{
-		fprintf(stderr, "File failed to open, exiting\n");
+		fprintf(stderr, "File - %s failed to open, exiting\n", filename);
 		exit(EXIT_FAILURE);
 	}
 
@@ -236,6 +196,7 @@ char* getIngredientsFileName(char* filename)
 
 	return ingredientInfo;
 }
+
 char* getInstructionsFileName(char* filename)
 {
 	FILE* fp;
@@ -247,7 +208,7 @@ char* getInstructionsFileName(char* filename)
 
 	if (fp == NULL)
 	{
-		fprintf(stderr, "File failed to open, exiting\n");
+		fprintf(stderr, "File - %s failed to open, exiting\n", filename);
 		exit(EXIT_FAILURE);
 	}
 
@@ -270,46 +231,105 @@ char* getInstructionsFileName(char* filename)
 void saveRestaurantInfo(PRESTAURANTNODE list, char* filename)
 {
 	FILE* fp;
-	errno_t fileError = fopen_s(&fp, filename, "r");		// this needs to be write maybe
+	errno_t fileError = fopen_s(&fp, filename, "w");		// this needs to be write maybe
 
 	if (fp == NULL)
 	{
-		fprintf(stderr, "File failed to open, exiting\n");
+		fprintf(stderr, "File - %s failed to open, exiting\n", filename);
 		exit(EXIT_FAILURE);
 	}
+	
+	// i need to find the \0 and replace with \n (only the first one)
+	// this is literally the jankiest thing I have ever written
 
-	PRESTAURANTNODE tempList = (PRESTAURANTNODE)malloc(sizeof(PRESTAURANTNODE));
+	int i = 0;
+	while (list->restaurant.restaurantName[i] != '\0')
+		i++;
+	list->restaurant.restaurantName[i] = '\n';
 
-	if (!tempList)
-	{
-		fprintf(stderr, "Failed to allocate memory for RestaurantList, exiting\n");
-		exit(EXIT_FAILURE);
-	}
+	i = 0;
+	while (list->restaurant.headChef[i] != '\0')
+		i++;
+	list->restaurant.headChef[i] = '\n';
 
-	tempList = list;
+	i = 0;
+	while (list->restaurant.restaurantSypnopsis[i] != '\0')
+		i++;
+	list->restaurant.restaurantSypnopsis[i] = '\n';
 
-	do
-	{
-		fprintf(fp, "%s\n", tempList->restaurant.restaurantName);
-		fprintf(fp, "%s\n", tempList->restaurant.headChef);
-		fprintf(fp, "%s\n", tempList->restaurant.restaurantSypnopsis);
-		for (int i = 0; i < MENUSIZE; i++)
-		{
-			fprintf(fp, "%s\n", tempList->restaurant.specialityMenu[i]);
-		}
+	i = 0;
+	while (list->restaurant.specialityMenu[0][i] != '\0')
+		i++;
+	list->restaurant.specialityMenu[0][i] = '\n';
+	list->restaurant.specialityMenu[0][++i] = '\0';
 
-		tempList = fetchNextNode(tempList);
+	i = 0;
+	while (list->restaurant.specialityMenu[1][i] != '\0')
+		i++;
+	list->restaurant.specialityMenu[1][i] = '\n';
+	list->restaurant.specialityMenu[1][++i] = '\0';
 
-		//this is where I will write the save data back
-	} while (tempList != NULL);
+	i = 0;
+	while (list->restaurant.specialityMenu[2][i] != '\0')
+		i++;
+	list->restaurant.specialityMenu[2][i] = '\n';
+	list->restaurant.specialityMenu[2][++i] = '\0';
+
+	// write the restaurant information to txt file 
+	fputs(list->restaurant.restaurantName, fp);
+	fputs(list->restaurant.headChef, fp);
+	fputs(list->restaurant.restaurantSypnopsis, fp);
+	fputs(list->restaurant.specialityMenu[0], fp);
+	fputs(list->restaurant.specialityMenu[1], fp);
+	fputs(list->restaurant.specialityMenu[2], fp);
 }
 
 void saveIngredients(PRESTAURANTNODE list, char* filename)
 {
+	FILE* fp;
+	errno_t fileError = fopen_s(&fp, filename, "w");
 
+	if (fp == NULL)
+	{
+		fprintf(stderr, "File - %s failed to open, exiting\n", filename);
+		exit(EXIT_FAILURE);
+
+	}
+
+	while (list->restaurant.ingredientQueueHead->head != list->restaurant.ingredientQueueHead->tail)
+	{
+		// print the ingredients to the text file
+		fprintf(fp, "%s\n", list->restaurant.ingredientQueueHead->head->ingredient);
+		fprintf(fp, "%f\n", list->restaurant.ingredientQueueHead->head->measurement); // does this print properly?
+		fprintf(fp, "%s\n", list->restaurant.ingredientQueueHead->head->unitOfMeasurement);
+		
+		// set the head to the next
+		list->restaurant.ingredientQueueHead->head = list->restaurant.ingredientQueueHead->head->nextNode;
+	}
+
+	fclose(fp);
 }
 
 void saveInstructions(PRESTAURANTNODE list, char* filename)
 {
+	FILE* fp;
+	errno_t fileError = fopen_s(&fp, filename, "w");
 
+	if (fp == NULL)
+	{
+		fprintf(stderr, "File - %s failed to open, exiting\n", filename);
+		exit(EXIT_FAILURE);
+
+	}
+
+	while (list->restaurant.instructionQueueHead->head != list->restaurant.instructionQueueHead->tail)
+	{
+		// print the instructions to the text file
+		fprintf(fp, "%s\n", list->restaurant.instructionQueueHead->head->instruction);
+
+		// set the head to the next
+		list->restaurant.instructionQueueHead->head = list->restaurant.instructionQueueHead->head->nextNode;
+	}
+
+	fclose(fp);
 }

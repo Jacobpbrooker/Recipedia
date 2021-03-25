@@ -9,7 +9,7 @@
 //#include "SaveLoad.h"
 
 #define NUMBEROFDOCUMENTSTOOPEN 3
-#define FILENAMELENGTH 50
+#define FILENAMELENGTH 100
 #define INGREDIENTQUEUEFILE "ingredientList.txt"
 #define INSTRUCTIONQUEUEFILE "instructionList.txt"
 #define MAXINPUT 150
@@ -22,7 +22,7 @@ PRESTAURANT returnRestaurant(char* fileControlDoc) // there is so many magic num
 
 	if (fpControlDoc == NULL)
 	{
-		fprintf(stderr, "File - (%s) failed to open, exiting\n", fileControlDoc);
+		fprintf(stderr, "(return Restaurant) File - (%s) failed to open, exiting\n", fileControlDoc);
 		exit(EXIT_FAILURE);
 	}
 
@@ -64,7 +64,7 @@ PRESTAURANT returnRestaurant(char* fileControlDoc) // there is so many magic num
 	errno_t errRest = fopen_s(&fpRestaurantDoc, filePathRestaurantInformation, "r");				// reads text file and loads file path of restaurant information to array
 	if (fpRestaurantDoc == NULL)
 	{
-		fprintf(stderr, "File - (%s) failed to open, exiting\n", filePathRestaurantInformation);
+		fprintf(stderr, "(return Restaurant2) File - (%s) failed to open, exiting\n", filePathRestaurantInformation);
 		exit(EXIT_FAILURE);
 	}
 	
@@ -73,7 +73,7 @@ PRESTAURANT returnRestaurant(char* fileControlDoc) // there is so many magic num
 
 	if (fpIngredientDoc == NULL)
 	{
-		fprintf(stderr, "File - (%s) failed to open, exiting\n", filePathIngredients);
+		fprintf(stderr, "(return Restaurant3) File - (%s) failed to open, exiting\n", filePathIngredients);
 		exit(EXIT_FAILURE);
 	}
 	
@@ -81,7 +81,7 @@ PRESTAURANT returnRestaurant(char* fileControlDoc) // there is so many magic num
 	errno_t errInstr = fopen_s(&fpInstructionDoc, filePathInstructions, "r");				// reads text file and loads file path of ingredients information to array
 	if (fpInstructionDoc == NULL)
 	{
-		fprintf(stderr, "File - (%s) failed to open, exiting\n", filePathInstructions);
+		fprintf(stderr, " (return Restaurant3) File - (%s) failed to open, exiting\n", filePathInstructions);
 		exit(EXIT_FAILURE);
 	}
 
