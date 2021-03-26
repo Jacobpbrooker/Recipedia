@@ -13,8 +13,6 @@
 int main(int argc, char* argv[])
 {
 	PRESTAURANTNODE	restaurantList = testLoad(RECIPEDIALOADFILE);
-	printf("%s", restaurantList->nextNode->restaurant.restaurantName);
-
 
 	/*
 	bool adminAccess = adminMode(argv[1], strlen(argv[1]));
@@ -36,9 +34,8 @@ int main(int argc, char* argv[])
 
 	//test search
 
-	int input = 4;
-	PRESTAURANTNODE test = searchNum(restaurantList, input);
-	searchtwo(restaurantList, input);
+	PRESTAURANTNODE test = searchNum(restaurantList, 6);
+	//printf("%s", test->restaurant.restaurantName);
 
 	exit(EXIT_SUCCESS);
 }

@@ -1,7 +1,16 @@
 #include "search.h"
 #include <stdio.h>
 
-PRESTAURANT searchNum(PRESTAURANTNODE r, int input)
+PRESTAURANTNODE searchNum(PRESTAURANTNODE r, int input)
 {
-	printf("\n%d", input);
+	PRESTAURANTNODE copy = r;
+
+	//given a number, traverse the list that many times and return the restaurant there
+
+	for (int i = 0; i < input-1; i++)
+	{
+		copy = copy->nextNode;
+	}
+
+	return copy;
 }
