@@ -35,13 +35,6 @@ PINSTRUCTION createInstruction(char*);
 PINGREDIENTQUEUE loadIngredientQueue(char*);
 PINSTRUCTIONQUEUE loadInstructionQueue(char*);
 
-// free functions (worry about after)
-void freeNode(PRESTAURANTNODE);
-void freeIngredientQueue(PINGREDIENTQUEUE);
-void freeIngredient(PINGREDIENT);
-void freeInstructionQueue(PINSTRUCTIONQUEUE);
-void freeInstruction(PINSTRUCTION);
-
 //queue functions
 PINGREDIENTQUEUE initializeIngredientQueue();
 PINSTRUCTIONQUEUE initalizeInstructionQueue();

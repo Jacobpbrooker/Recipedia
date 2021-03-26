@@ -72,7 +72,7 @@ bool returnAdminConfirmation(unsigned char* commandLineCode, int codeLength)
 void adminMode(PRESTAURANTNODE restaurantList)
 {
 	int userSelection = 2;
-	char restaurantDelete[RESTAURANTNAME];
+	//char restaurantDelete[RESTAURANTNAME];
 	char* testRestaurantDelete = "maidotestname3\0";
 	do {
 		displayMenu();

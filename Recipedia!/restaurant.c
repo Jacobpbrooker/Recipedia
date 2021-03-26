@@ -316,3 +316,20 @@ PRESTAURANT returnNewRestaurant(void)
 	return newRestaurant;
 }
 
+// free functions (worry about after)
+void freeRestaurantList(PRESTAURANTNODE list)
+{
+	if (list == NULL)
+		return;
+	else
+		freeRestaurantList(list->nextNode);
+
+	freeNode(list);	// free on the return 
+}
+
+void freeNode(PRESTAURANTNODE list)
+{
+	free(list->restaurant.ingredientQueueHead);
+	free(list->restaurant.instructionQueueHead);
+	free(list);
+}

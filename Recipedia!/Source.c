@@ -15,10 +15,11 @@ int main(int argc, char* argv[])
 {
 	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
 
-	if (!saveFile(restaurantList, RECIPEDIADIRECTORY))
-		exit(EXIT_FAILURE);
+	freeRestaurantList(restaurantList);
+	//if (!saveFile(restaurantList, RECIPEDIADIRECTORY))
+	//	exit(EXIT_FAILURE);
 
-	exit(EXIT_SUCCESS);
+	//exit(EXIT_SUCCESS);
 
 	bool adminAccess = returnAdminConfirmation(argv[1], strlen(argv[1]));
 

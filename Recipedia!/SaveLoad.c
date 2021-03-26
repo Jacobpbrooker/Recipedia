@@ -69,20 +69,6 @@ PRESTAURANTNODE loadRestaurants(char* filename)
 // save file
 bool saveFile(PRESTAURANTNODE list, char* filename)
 {
-	// i need to follow every step of the load process but just not write until I have all the file names
-	// read master file
-	// follow file path to sub master document
-	// open restaurant doc
-	//		write restaurant to file
-	// open ingredients doc
-	//		write ingredients to file
-	//		*loop* free instruction node
-	//		free ingredients queue
-	// open instruction doc
-	//		write instruction to file
-	//		*loop* free instruction node
-	//		free instruction queue
-
 	// open and read master file (don't need to write to this file only read)
 	FILE* fp;
 	errno_t fileError = fopen_s(&fp, filename, "r");
