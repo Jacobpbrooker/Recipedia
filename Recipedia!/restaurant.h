@@ -31,7 +31,7 @@ PRESTAURANTNODE newNode(RESTAURANT);
 PRESTAURANTNODE fetchNextNode(PRESTAURANTNODE);
 PRESTAURANT returnNewRestaurant(void);
 
-// free functions (worry about after)
+// free functions (worry about after)ds
 void freeRestaurantList(PRESTAURANTNODE);
 void freeNode(PRESTAURANTNODE);
 

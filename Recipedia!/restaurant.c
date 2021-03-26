@@ -194,9 +194,7 @@ PRESTAURANTNODE createRestaurant(PRESTAURANTNODE restaurantListPointer, PRESTAUR
 	tempRestaurant->ingredientQueueHead = restaurant->ingredientQueueHead;
 	tempRestaurant->instructionQueueHead = restaurant->instructionQueueHead;
 
-	// Push task to linked list
-	// I think this push function is pushing to the head of the list instead of the back
-	// I can probably fix it by search for the end of the linked list and then passing that into the function
+	// Push restaurant to linked list
 	push(&restaurantListPointer, *tempRestaurant);
 
 	return restaurantListPointer;
