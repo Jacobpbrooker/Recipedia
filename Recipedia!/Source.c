@@ -7,6 +7,7 @@
 #include "queue.h"
 #include "restaurant.h"
 #include "SaveLoad.h"
+#include "search.h"
 
 #define RECIPEDIALOADFILE "restaurants/toptenrestaurants.txt"
 
@@ -31,11 +32,6 @@ int main(int argc, char* argv[])
 	//PRESTAURANTNODE	restaurantList = loadOrCreate(RECIPEDIALOADFILE);
 
 	//saveFile(restaurantList);
-
-	//test search
-
-	PRESTAURANTNODE test = searchNum(restaurantList, 6);
-	//printf("%s", test->restaurant.restaurantName);
 
 	exit(EXIT_SUCCESS);
 }
