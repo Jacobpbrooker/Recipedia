@@ -138,7 +138,7 @@ bool saveFile(PRESTAURANTNODE list)
 
 	do
 	{
-		fprintf(fp, "%s\n", tempList->restaurant.resturantName);
+		fprintf(fp, "%s\n", tempList->restaurant.restaurantName);
 		fprintf(fp, "%s\n", tempList->restaurant.headChef);
 		fprintf(fp, "%s\n", tempList->restaurant.restaurantSypnopsis);
 		for (int i = 0; i < MENUSIZE; i++)
