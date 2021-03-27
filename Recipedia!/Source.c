@@ -2,37 +2,37 @@
 Recipedia
 By: Jakob, Mason, Torin, Raven
 Date: 
-
 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include "main.h"
 
-int main(int argc, char* argv[])
+int main(/*int argc, char* argv[]*/)
 {
 	bool keepGoing = true;
-	int userInput;
+	char userInput;
 	do {
 		//displayMainMenu()
-		scanf_s("%d", &userInput);
+		printf("Which action do you wish to take:");
+		scanf_s("%ch", &userInput);
 		switch (userInput)
 		{
-		case 1://search for restaurant
+		case '1'://search for restaurant
 		{
 
 		}
-		case 2://search for recipe
+		case '2'://search for recipe
 		{
 
 		}
-		case 3://random search
+		case '3'://random search
 		{
 
 		}
-		case 4://exit
+		case '4'://exit
 		{
-			printf("Exiting...");
+			printf("Exiting...\n");
 			keepGoing = false;
 			break;
 		}
@@ -43,6 +43,5 @@ int main(int argc, char* argv[])
 		}
 
 	} while (keepGoing);
-	clrscr();
 	printf("Thank you for using Recipedia =)\n");
 }
