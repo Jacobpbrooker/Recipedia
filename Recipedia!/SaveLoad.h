@@ -1,6 +1,7 @@
 #pragma once
 
 #include "queue.h"
+#define RECIPEDIADIRECTORY "restaurants/toptenrestaurants.txt"
 
 // save files
 bool saveFile(PRESTAURANTNODE, char*);

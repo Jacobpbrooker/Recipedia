@@ -1,0 +1,10 @@
+restaurants/mirazur/mirazur.txt
+restaurants/noma/noma.txt
+restaurants/asadoretxebarri/asadoretxebarri.txt
+restaurants/gaggan/gaggan.txt
+restaurants/geranium/geranium.txt
+restaurants/central/central.txt
+restaurants/mugaritz/mugaritz.txt
+restaurants/arpege/arpege.txt
+restaurants/disfrutar/disfrutar.txt
+restaurants/maido/maido.txt

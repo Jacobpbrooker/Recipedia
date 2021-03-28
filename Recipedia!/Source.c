@@ -8,7 +8,7 @@
 #include "restaurant.h"
 #include "SaveLoad.h"
 
-#define RECIPEDIADIRECTORY "restaurants/toptenrestaurants.txt"
+
 #define MAXUSERNAME 50
 
 int main(int argc, char* argv[])

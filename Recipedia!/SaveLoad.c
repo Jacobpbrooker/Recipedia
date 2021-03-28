@@ -22,7 +22,7 @@ PRESTAURANTNODE loadRestaurants(char* filename)
 
 	if (fp == NULL)
 	{
-		fprintf(stderr, "File failed to open, exiting\n");
+		fprintf(stderr, "File failed to open %s, exiting\n", filename);
 		exit(EXIT_FAILURE);
 	}
 

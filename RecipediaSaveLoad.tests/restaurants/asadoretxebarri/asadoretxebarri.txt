@@ -1,0 +1,3 @@
+restaurants/asadoretxebarri/asadoretxebarrirestaurant.txt
+restaurants/asadoretxebarri/asadoretxebarriingredients.txt
+restaurants/asadoretxebarri/asadoretxebarriinstructions.txt
