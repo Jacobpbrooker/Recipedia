@@ -12,7 +12,7 @@
 #define RESTAURANTLINES 6
 #define MAXSTRINGLENGTH 100
 #define NUMBEROFRESTAURANTS 10
-#define RESTAURANTNAME 50
+#define RESTAURANTNAME 100
 
 // load restaurants to list
 PRESTAURANTNODE loadRestaurants(char* filename)

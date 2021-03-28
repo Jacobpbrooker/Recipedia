@@ -1,6 +1,3 @@
-centralingredient1
+geraniumingredient1
 15.000000
 kg
-centralingredient2
-2.000000
-tsp

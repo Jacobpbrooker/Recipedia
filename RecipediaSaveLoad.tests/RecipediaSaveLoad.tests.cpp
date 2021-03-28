@@ -8,8 +8,7 @@ extern "C" {
 #include "SaveLoad.h"
 }
 
-//#define TESTDIRECTORY "Debug/restaurants/toptenrestaurants.txt"
-#define TESTDIRECTORY "C:/Users/jakep/OneDrive/BCS/Y1S2/Project CSCN71030/Recipedia!/Recipedia/RecipediaSaveLoad.tests/restaurants/toptenrestaurants.txt"
+#define TESTDIRECTORY "../RecipediaSaveLoad.tests/restaurants/toptenrestaurants.txt"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -52,6 +51,7 @@ namespace RecipediaSaveLoadtests
 		{
 			// arrange
 			// open notepad++ and edit every single link to be the full file path as done above
+			//PRESTAURANTNODE X = (PRESTAURANTNODE)malloc(sizeof(RESTAURANTNODE));
 			PRESTAURANTNODE x = loadRestaurants(TESTDIRECTORY);
 			int expectedReturn = 1;
 			// act

@@ -1,3 +1,3 @@
-restaurants/asadoretxebarri/asadoretxebarrirestaurant.txt
-restaurants/asadoretxebarri/asadoretxebarriingredients.txt
-restaurants/asadoretxebarri/asadoretxebarriinstructions.txt
+../RecipediaSaveLoad.tests/restaurants/asadoretxebarri/asadoretxebarrirestaurant.txt
+../RecipediaSaveLoad.tests/restaurants/asadoretxebarri/asadoretxebarriingredients.txt
+../RecipediaSaveLoad.tests/restaurants/asadoretxebarri/asadoretxebarriinstructions.txt
