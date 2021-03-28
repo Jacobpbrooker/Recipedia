@@ -4,5 +4,3 @@ maidoinstruction3
 maidoinstruction4
 maidoinstruction5
 maidoinstruction6
-maidoinstruction7
-maidoinstruction9
