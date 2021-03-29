@@ -79,46 +79,53 @@ namespace RecipediaSaveLoadtests
 		}
 		TEST_METHOD(T02_queue_enqueueInstruction_Return1)
 		{
-			// arrange
-			PINGREDIENTQUEUE ingredientQueue = initializeIngredientQueue();
+			//// arrange
+			PINSTRUCTIONQUEUE instructionQueue = initalizeInstructionQueue();
 
 			FILE* fp;
 			errno_t fileError = fopen_s(&fp, "../RecipediaSaveLoad.tests/restaurants/noma/nomainstructions.txt", "r");
 
-			char* ingredient = (char*)malloc(MAXSTRINGLENGTH);
-			memset(ingredient, '\0', sizeof(char) * MAXSTRINGLENGTH);
-
-			char* unitOfMeasurement = (char*)malloc(MAXSTRINGLENGTH);
-			memset(unitOfMeasurement, '\0', sizeof(char) * MAXSTRINGLENGTH);
-
-			char* measurementString = (char*)malloc(sizeof(char) * MAXSTRINGLENGTH);
-			memset(measurementString, '\0', sizeof(char) * MAXSTRINGLENGTH);
-
-			fgets(ingredient, MAXSTRINGLENGTH, fp);
-			float measurement = atof(fgets(measurementString, MAXSTRINGLENGTH, fp));
-			fgets(unitOfMeasurement, MAXSTRINGLENGTH, fp);
-
-
-			// this will add the terminator to each of the char strings added
-			for (unsigned int i = 0; i < strlen(ingredient); i++)
+			if (fp == NULL)
 			{
-				if (ingredient[i] == '\n')
+				fprintf(stderr, "Failed to open file %s", "../RecipediaSaveLoad.tests/restaurants/noma/nomainstructions.txt");
+				exit(EXIT_FAILURE);
+
+			}
+
+			char ch;
+			int lines = 0;
+			while (!feof(fp))
+			{
+				ch = fgetc(fp);
+				if (ch == '\n')
 				{
-					ingredient[i] = '\0';
+					lines++;
 				}
 			}
 
-			for (unsigned int i = 0; i < strlen(unitOfMeasurement); i++)
+			fseek(fp, 0, SEEK_SET);
+			for (int i = 0; i < lines; i++) // get the number of lines (each line will be one instruction)
 			{
-				if (unitOfMeasurement[i] == '\n')
+				char* instruction = (char*)malloc(MAXSTRINGLENGTH);
+				memset(instruction, '\0', sizeof(char) * MAXSTRINGLENGTH);
+
+				fgets(instruction, MAXSTRINGLENGTH, fp);
+
+				// this will add the terminator to each of the char strings added
+				for (unsigned int i = 0; i < strlen(instruction); i++)
 				{
-					unitOfMeasurement[i] = '\0';
+					if (instruction[i] == '\n')
+					{
+						instruction[i] = '\0';
+					}
 				}
-			}
 
 			int expectedReturn = 1;
+			
 			// act
-			int testReturn = enqueueIngredient(ingredientQueue, createIngredient(ingredient, measurement, unitOfMeasurement));
+			int testReturn = enqueueInstruction(instructionQueue, createInstruction(instruction));
+			fclose(fp);
+			
 			// assert
 			Assert::AreEqual(testReturn, expectedReturn);
 		}

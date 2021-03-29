@@ -1,7 +1,6 @@
-geraniuminstruction1
-geraniuminstruction2
-geraniuminstruction3
-geraniuminstruction4
-geraniuminstruction5
-geraniuminstruction6
-geraniuminstruction7
+centralinstruction1
+centralinstruction2
+centralinstruction3
+centralinstruction4
+centralinstruction5
+centralinstruction6
