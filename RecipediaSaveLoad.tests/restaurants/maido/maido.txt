@@ -1,0 +1,3 @@
+../RecipediaSaveLoad.tests/restaurants/maido/maidorestaurant.txt
+../RecipediaSaveLoad.tests/restaurants/maido/maidoingredients.txt
+../RecipediaSaveLoad.tests/restaurants/maido/maidoinstructions.txt

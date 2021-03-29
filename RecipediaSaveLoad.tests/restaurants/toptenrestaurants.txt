@@ -1,0 +1,10 @@
+../RecipediaSaveLoad.tests/restaurants/mirazur/mirazur.txt
+../RecipediaSaveLoad.tests/restaurants/noma/noma.txt
+../RecipediaSaveLoad.tests/restaurants/asadoretxebarri/asadoretxebarri.txt
+../RecipediaSaveLoad.tests/restaurants/gaggan/gaggan.txt
+../RecipediaSaveLoad.tests/restaurants/geranium/geranium.txt
+../RecipediaSaveLoad.tests/restaurants/central/central.txt
+../RecipediaSaveLoad.tests/restaurants/mugaritz/mugaritz.txt
+../RecipediaSaveLoad.tests/restaurants/arpege/arpege.txt
+../RecipediaSaveLoad.tests/restaurants/disfrutar/disfrutar.txt
+../RecipediaSaveLoad.tests/restaurants/maido/maido.txt

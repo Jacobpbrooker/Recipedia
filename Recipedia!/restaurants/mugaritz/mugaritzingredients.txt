@@ -1,9 +1,6 @@
-mugaritzingredient1
-15
+gagganingredient1
+15.000000
 kg
-mugaritzingredient2
-2
+gagganingredient2
+2.000000
 tsp
-mugaritzingredient3
-5
-cups

@@ -1,8 +1,16 @@
 #pragma once
 
 #include "queue.h"
+#define RECIPEDIADIRECTORY "restaurants/toptenrestaurants.txt"
 
-PRESTAURANTNODE loadOrCreate(char*);
-//PRESTAURANTNODE loadOrCreate();
-bool saveFile(PRESTAURANTNODE);
-PRESTAURANTNODE testLoad(char*);
+// save files
+bool saveFile(PRESTAURANTNODE, char*);
+char* getRestaurantFileName(char*);
+char* getIngredientsFileName(char*);
+char* getInstructionsFileName(char*);
+void saveRestaurantInfo(PRESTAURANTNODE, char*);
+void saveIngredients(PRESTAURANTNODE, char*);
+void saveInstructions(PRESTAURANTNODE, char*);
+
+// load files
+PRESTAURANTNODE loadRestaurants(char*);
