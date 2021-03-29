@@ -1,6 +1,0 @@
-arpegetestname
-arpegename
-arpegesypnopsis
-arpegespeciality1
-arpegespeciality2
-arpegespeciality3

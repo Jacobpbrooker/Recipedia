@@ -74,6 +74,7 @@ namespace RecipediaSaveLoadtests
 			int expectedReturn = 1;
 			// act
 			int testReturn = enqueueIngredient(ingredientQueue, createIngredient(ingredient, measurement, unitOfMeasurement));
+			fclose(fp);
 			// assert
 			Assert::AreEqual(testReturn, expectedReturn);
 		}
@@ -84,13 +85,6 @@ namespace RecipediaSaveLoadtests
 
 			FILE* fp;
 			errno_t fileError = fopen_s(&fp, "../RecipediaSaveLoad.tests/restaurants/noma/nomainstructions.txt", "r");
-
-			if (fp == NULL)
-			{
-				fprintf(stderr, "Failed to open file %s", "../RecipediaSaveLoad.tests/restaurants/noma/nomainstructions.txt");
-				exit(EXIT_FAILURE);
-
-			}
 
 			char ch;
 			int lines = 0;
@@ -120,14 +114,15 @@ namespace RecipediaSaveLoadtests
 					}
 				}
 
-			int expectedReturn = 1;
-			
-			// act
-			int testReturn = enqueueInstruction(instructionQueue, createInstruction(instruction));
-			fclose(fp);
-			
-			// assert
-			Assert::AreEqual(testReturn, expectedReturn);
+				int expectedReturn = 1;
+
+				// act
+				int testReturn = enqueueInstruction(instructionQueue, createInstruction(instruction));
+				fclose(fp);
+
+				// assert
+				Assert::AreEqual(testReturn, expectedReturn);
+			}
 		}
 	};
 	TEST_CLASS(SaveLoadFunctions)

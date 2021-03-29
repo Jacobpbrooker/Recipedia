@@ -4,3 +4,6 @@ arpegeinstruction3
 arpegeinstruction4
 arpegeinstruction5
 arpegeinstruction6
+arpegeinstruction7
+arpegeinstruction9
+arpegeinstruction10

@@ -4,3 +4,6 @@ mugaritzinstruction3
 mugaritzinstruction4
 mugaritzinstruction5
 mugaritzinstruction6
+mugaritzinstruction7
+mugaritzinstruction9
+mugaritzinstruction10

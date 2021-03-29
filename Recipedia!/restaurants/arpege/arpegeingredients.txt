@@ -4,3 +4,6 @@ kg
 asadoretxebarriingredient2
 2.000000
 tsp
+asadoretxebarriingredient3
+5.000000
+cups

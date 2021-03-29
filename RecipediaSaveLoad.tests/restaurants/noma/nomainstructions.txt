@@ -4,3 +4,6 @@ nomainstruction3
 nomainstruction4
 nomainstruction5
 nomainstruction6
+nomainstruction7
+nomainstruction9
+nomainstruction10

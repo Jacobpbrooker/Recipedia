@@ -4,3 +4,6 @@ centralinstruction3
 centralinstruction4
 centralinstruction5
 centralinstruction6
+centralinstruction7
+centralinstruction9
+centralinstruction10
