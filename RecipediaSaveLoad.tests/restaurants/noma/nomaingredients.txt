@@ -1,6 +1,6 @@
-disfrutaringredient1
+nomaingredient1
 15.000000
 kg
-disfrutaringredient2
+nomaingredient2
 2.000000
 tsp
