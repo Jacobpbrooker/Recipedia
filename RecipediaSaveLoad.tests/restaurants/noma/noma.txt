@@ -1,0 +1,3 @@
+../RecipediaSaveLoad.tests/restaurants/noma/nomarestaurant.txt
+../RecipediaSaveLoad.tests/restaurants/noma/nomaingredients.txt
+../RecipediaSaveLoad.tests/restaurants/noma/nomainstructions.txt

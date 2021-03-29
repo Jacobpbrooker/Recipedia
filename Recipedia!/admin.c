@@ -4,13 +4,22 @@
 #include <stdbool.h>
 
 #include "admin.h"
+//#include "restaurant.h"
 
 #define ADMINCODE 0x99										// this makes the admin code 1001 1001
+#define RESTAURANTNAME 50
+#define MAXINPUT 150
 
 unsigned char* convertCharToBits(char* adminCode, int codeLength)
 {
 	unsigned char* adminBitShiftCode;
 	adminBitShiftCode = (unsigned char*)malloc(sizeof(unsigned char*) * codeLength);
+	if (!adminBitShiftCode)
+	{
+		fprintf(stderr, "Failed to allocate memory for adminBitShiftCode\n");
+		exit(EXIT_FAILURE);
+	}
+
 	memset(adminBitShiftCode, '\0', sizeof(unsigned char*) * codeLength);
 
 
@@ -41,9 +50,10 @@ unsigned char* convertCharToBits(char* adminCode, int codeLength)
 
 		++adminCode;										// increment position in array
 	}
+	return(adminBitShiftCode);
 }
 
-bool adminMode(unsigned char* commandLineCode, int codeLength) 
+bool returnAdminConfirmation(unsigned char* commandLineCode, int codeLength) 
 {
 	bool returnAdminMode = false;							// set return variable to false default
 	
@@ -59,58 +69,85 @@ bool adminMode(unsigned char* commandLineCode, int codeLength)
 	return returnAdminMode;
 }
 
+void adminMode(PRESTAURANTNODE restaurantList)
+{
+	int userSelection = 2;
+	//char restaurantDelete[RESTAURANTNAME];
+	char* testRestaurantDelete = "maidotestname3\0";
+	do {
+		displayMenu();
+		//scanf_s("%d", &userSelection);
+		switch (userSelection)
+		{
+		case 1:
+			printf("You have selected remove restaurant\n");
+			printf("Enter name of restaurant to be deleted\n");
+			printf("Restuarant - ");
+			//restaurantList = deleteRestaurant(restaurantList, testRestaurantDelete);
+			//scanf_s("%s", restaurantDelete, RESTAURANTNAME);
+			//find and delete(free) the node on the linked list
+
+			break;
+		case 2:
+			printf("You have selected add new restaurant\n");
+			addRestaurant(restaurantList);
+			break;
+		default:
+			break;
+		}
+	} while (userSelection != 0);
+
+}
+
+PRESTAURANTNODE deleteRestaurant(PRESTAURANTNODE restaurantList, char* restaurant)
+{
+	return recursiveFindAndDeleteRestaurant(restaurantList, restaurant);
+}
 
 
-//PARITY Parity(unsigned char* buf, int iBufLen) {
-//
-//	// this is going to take an unsigned char which will be the char represented by the binary code
-//	// the iBufLen is the number of bytes we need to go through (so every 8 bits iBufLen will increase by 1)
-//
-//	PARITY returnParity = PAR_ERROR;		// set return variable to error default, defensive coding in case of mistake function will return error if other value not changed
-//	unsigned char maskReset = 0x80;			// 0x80 is is 1000 0000 in binary 
-//	unsigned char bitMask = maskReset;		// set the bitmask to the 1000 0000
-//	int onesForParity = 0;					// set the initial number of ones to zero so that we can increment within the loop
-//
-//	printf("*****************************************\n");
-//	printf("Binary - ");
-//
-//	int runs = 0;							// this is a counter for me later to check the numbers of runs
-//
-//	for (int i = 0; i < iBufLen;)
-//	{
-//		if (*buf & bitMask)					// now we check the buf that was passed (will be binary) against the bit mask using an & (and)
-//			onesForParity++;				// the & will check if there are 1 in the bit mask and 1 in the inputted data
-//											// if both have 1's the parity 1's increment (show notepad)
-//
-//		printf("%d", !!(*buf & bitMask));	// I just want to print the bits here so I actually print the bitmask
-//											// the !! operator checks if the value is zero (if it is returns 0) and if it is any other value we return 1
-//											// this makes us able to print the 1's and 0's of binary (but does not actually check if the value is one (just that the value is not 0))
-//											// functionally identical to (!(int) == 0) if int is not zero return true.
-//
-//		bitMask >>= 1;						// we shift the bit within the bit mask by one to the right and repeat again (check against mask and increment if 1 and 1)
-//
-//		if (bitMask == 0)					// if the bitmask is 0000 0000 (meaning we have bitshifted the one completely off) we reset it back to 1000 0000 to continue
-//		{
-//			bitMask = maskReset;			// we use the maskReset varaible initialized above to return the bitMask to the correct position
-//			buf++;							// we then move to the next inputed argument (next inputted binary from command line)
-//			i++;							// then we increment i to go again with the next argument
-//			runs++;							// this is a counter for me later to check the numbers of runs against
-//		}
-//
-//	}
-//	printf("\n");							// formatting to print the binary
-//
-//	if (onesForParity % 2 == 0)				// modulo check for even or odd return
-//		returnParity = PAR_EVEN;			// set return variable
-//	else
-//		returnParity = PAR_ODD;
-//
-//	// this section is entirely for printing to the terminal (no functional changed to data)
-//	printf("This is inside the Parity() function\n");
-//	printf("Number of Ones - %d\n", onesForParity);
-//	printf("Parity (0 - Even | 1 - Odd) - %d\n", returnParity);
-//	printf("Number of loops through the program (should match the number of bytes entered) - %d\n", runs);
-//	printf("-----------------------------------------\n");
-//
-//	return returnParity;					// return the parity
-//}
+PRESTAURANTNODE recursiveFindAndDeleteRestaurant(PRESTAURANTNODE currentNode, char* restaurant)
+{
+	if (currentNode == NULL || currentNode->nextNode == NULL)	// exit condition
+	{
+		return NULL;
+	}
+	if (strcmp(currentNode->restaurant.restaurantName, restaurant) == 0)			// node is head of list (not working)
+	{
+		PRESTAURANTNODE tempnode = currentNode;
+		currentNode = tempnode->nextNode;
+		free(tempnode);
+		return currentNode;
+	}
+	else if (strcmp(currentNode->nextNode->restaurant.restaurantName, restaurant) == 0) // searched for node is next node
+	{
+		PRESTAURANTNODE deleteNode = currentNode->nextNode;
+		currentNode->nextNode = currentNode->nextNode->nextNode; 
+		free(deleteNode); 
+		return currentNode;
+	}
+	else {
+		recursiveFindAndDeleteRestaurant(currentNode->nextNode, restaurant, currentNode);
+	}
+}
+
+void addRestaurant(PRESTAURANTNODE restaurantList)
+{
+	PRESTAURANTNODE tempNode = restaurantList;
+
+	while (tempNode->nextNode != NULL)
+	{
+		tempNode = tempNode->nextNode;
+	}
+
+	tempNode->nextNode = createRestaurant(tempNode->nextNode, returnNewRestaurant());
+}
+
+void displayMenu(void)
+{
+	printf("Welcome to Adminstrator Menu for Recipedia\n\n");
+	printf("Sections\n");
+	printf("1 - Delete Restaurant\n");
+	printf("2 - Add Restaurant\n");
+	printf("Selection - ");
+}
+

@@ -1,9 +1,6 @@
-arpegeingredient1
-15
+asadoretxebarriingredient1
+15.000000
 kg
-arpegeingredient2
-2
+asadoretxebarriingredient2
+2.000000
 tsp
-arpegeingredient3
-5
-cups

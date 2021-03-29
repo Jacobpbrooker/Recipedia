@@ -1,0 +1,3 @@
+../RecipediaSaveLoad.tests/restaurants/central/centralrestaurant.txt
+../RecipediaSaveLoad.tests/restaurants/central/centralingredients.txt
+../RecipediaSaveLoad.tests/restaurants/central/centralinstructions.txt

@@ -1,0 +1,3 @@
+../RecipediaSaveLoad.tests/restaurants/arpege/arpegerestaurant.txt
+../RecipediaSaveLoad.tests/restaurants/arpege/arpegeingredients.txt
+../RecipediaSaveLoad.tests/restaurants/arpege/arpegeinstructions.txt

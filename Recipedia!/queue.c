@@ -10,25 +10,6 @@
 #define INSTRUCTIONQUEUEFILE "instructionList.txt"
 #define INGREDIENTLINES 3
 
-//// free functions
-//
-//void freeQueue(PQUEUE queue)
-//{
-//	free(queue);											// free the queue
-//}
-//
-//void freeNode(PNODE node)
-//{
-//	freePatient(node->patientData);							// dive deeper and free the patient
-//	free(node);												// free the node
-//}
-//
-//void freePatient(PPATIENT patient)
-//{
-//
-//	free(patient);											// free patient
-//}
-
 // create 
 
 PINGREDIENT createIngredient(char* ingredient, float measurement, char* unitOfMeasurement)

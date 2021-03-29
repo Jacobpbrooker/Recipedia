@@ -1,0 +1,3 @@
+../RecipediaSaveLoad.tests/restaurants/mirazur/mirazurrestaurant.txt
+../RecipediaSaveLoad.tests/restaurants/mirazur/mirazuringredients.txt
+../RecipediaSaveLoad.tests/restaurants/mirazur/mirazurinstructions.txt
