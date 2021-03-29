@@ -15,9 +15,9 @@ int main(int argc, char* argv[])
 {
 	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
 
-	freeRestaurantList(restaurantList);
-	//if (!saveFile(restaurantList, RECIPEDIADIRECTORY))
-	//	exit(EXIT_FAILURE);
+	//freeRestaurantList(restaurantList);
+	if (!saveFile(restaurantList, RECIPEDIADIRECTORY))
+		exit(EXIT_FAILURE);
 
 	//exit(EXIT_SUCCESS);
 

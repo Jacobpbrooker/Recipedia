@@ -1,6 +1,0 @@
-maidoingredient1
-15.000000
-kg
-maidoingredient2
-2.000000
-tsp
