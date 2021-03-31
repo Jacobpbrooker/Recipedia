@@ -281,8 +281,8 @@ void saveIngredients(PRESTAURANTNODE list, char* filename)
 		exit(EXIT_FAILURE);
 
 	}
-
-	while (list->restaurant.ingredientQueueHead->head != list->restaurant.ingredientQueueHead->tail)
+	// i think this needs to be a do while loop not a while loop
+	while (list->restaurant.ingredientQueueHead->head != NULL)
 	{
 		// print the ingredients to the text file
 		fprintf(fp, "%s\n", list->restaurant.ingredientQueueHead->head->ingredient);
@@ -292,6 +292,16 @@ void saveIngredients(PRESTAURANTNODE list, char* filename)
 		// set the head to the next
 		list->restaurant.ingredientQueueHead->head = list->restaurant.ingredientQueueHead->head->nextNode;
 	}
+	//do
+	//{
+	//	// print the ingredients to the text file
+	//	fprintf(fp, "%s\n", list->restaurant.ingredientQueueHead->head->ingredient);
+	//	fprintf(fp, "%f\n", list->restaurant.ingredientQueueHead->head->measurement); // does this print properly?
+	//	fprintf(fp, "%s\n", list->restaurant.ingredientQueueHead->head->unitOfMeasurement);
+	//	
+	//	// set the head to the next
+	//	list->restaurant.ingredientQueueHead->head = list->restaurant.ingredientQueueHead->head->nextNode;
+	//} while (list->restaurant.ingredientQueueHead->head != list->restaurant.ingredientQueueHead->tail);
 
 	fclose(fp);
 }
@@ -308,7 +318,7 @@ void saveInstructions(PRESTAURANTNODE list, char* filename)
 
 	}
 
-	while (list->restaurant.instructionQueueHead->head != list->restaurant.instructionQueueHead->tail)
+	while (list->restaurant.instructionQueueHead->head != NULL)
 	{
 		// print the instructions to the text file
 		fprintf(fp, "%s\n", list->restaurant.instructionQueueHead->head->instruction);
