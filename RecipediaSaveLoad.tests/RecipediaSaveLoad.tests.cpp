@@ -148,31 +148,18 @@ namespace RecipediaSaveLoadtests
 		{
 			//Arrange
 			int input = 5;
-			char* expected = "centraltestname3";
+			char* expected = "geraniumtestname3";
 			PRESTAURANTNODE	list = loadRestaurants(TESTDIRECTORY);
 
 			//Act
 			PRESTAURANTNODE p = searchNum(list, input);
+			int isequal = strcmp(expected, p->restaurant.restaurantName);
 
 			//Assert
-			Assert::AreEqual(expected, p->restaurant.restaurantName);
+			Assert::AreEqual(0, isequal);
 		}
 
 		TEST_METHOD(T002_One)
-		{
-			//Arrange
-			int input = 1;
-			char* expected = "maidotestname3";
-			PRESTAURANTNODE	list = loadRestaurants(TESTDIRECTORY);
-
-			//Act
-			PRESTAURANTNODE p = searchNum(list, input);
-
-			//Assert
-			Assert::AreEqual(expected, p->restaurant.restaurantName);
-		}
-
-		TEST_METHOD(T003_Ten)
 		{
 			//Arrange
 			int input = 1;
@@ -181,9 +168,25 @@ namespace RecipediaSaveLoadtests
 
 			//Act
 			PRESTAURANTNODE p = searchNum(list, input);
+			int isequal = strcmp(expected, p->restaurant.restaurantName);
 
 			//Assert
-			Assert::AreEqual(expected, p->restaurant.restaurantName);
+			Assert::AreEqual(0, isequal);
+		}
+
+		TEST_METHOD(T003_Ten)
+		{
+			//Arrange
+			int input = 10;
+			char* expected = "maidotestname3";
+			PRESTAURANTNODE	list = loadRestaurants(TESTDIRECTORY);
+
+			//Act
+			PRESTAURANTNODE p = searchNum(list, input);
+			int isequal = strcmp(expected, p->restaurant.restaurantName);
+
+			//Assert
+			Assert::AreEqual(0, isequal);
 		}
 	};
 
