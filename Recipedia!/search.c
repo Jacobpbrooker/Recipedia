@@ -20,7 +20,10 @@ PRESTAURANTNODE searchRestaurant(PRESTAURANTNODE r, char* input)
 
 	int count = 0;
 	while (copy->nextNode != NULL)
+	{
 		count++;
+		copy = copy->nextNode;
+	}
 
 	//reset copy to the head
 	copy = r;
@@ -45,7 +48,10 @@ PRESTAURANTNODE searchRecipe(PRESTAURANTNODE r, char* input)
 
 	int count = 0;
 	while (copy->nextNode != NULL)
+	{
 		count++;
+		copy = copy->nextNode;
+	}
 
 	//reset copy to the head
 	copy = r;
