@@ -203,9 +203,10 @@ namespace RecipediaSaveLoadtests
 
 			//Act
 			PRESTAURANTNODE p = searchRestaurant(list, input);
+			int isequal = strcmp(expected, p->restaurant.restaurantName);
 
 			//Assert
-			Assert::AreEqual(expected, p->restaurant.restaurantName);
+			Assert::AreEqual(0, isequal);
 		}
 
 		TEST_METHOD(T005_geraniumtestname3)
@@ -217,9 +218,10 @@ namespace RecipediaSaveLoadtests
 
 			//Act
 			PRESTAURANTNODE p = searchRestaurant(list, input);
+			int isequal = strcmp(expected, p->restaurant.restaurantName);
 
 			//Assert
-			Assert::AreEqual(expected, p->restaurant.restaurantName);
+			Assert::AreEqual(0, isequal);
 		}
 
 		TEST_METHOD(T006_mirazurtestname3)
@@ -231,9 +233,10 @@ namespace RecipediaSaveLoadtests
 
 			//Act
 			PRESTAURANTNODE p = searchRestaurant(list, input);
+			int isequal = strcmp(expected, p->restaurant.restaurantName);
 
 			//Assert
-			Assert::AreEqual(expected, p->restaurant.restaurantName);
+			Assert::AreEqual(0, isequal);
 		}
 	};
 
