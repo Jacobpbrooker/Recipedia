@@ -1,6 +1,9 @@
-mirazuringredient1
+maidoingredient1
 15.000000
 kg
-mirazuringredient2
+maidoingredient2
 2.000000
 tsp
+maidoingredient3
+5.000000
+cups

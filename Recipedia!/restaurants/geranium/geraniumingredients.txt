@@ -1,9 +1,9 @@
-centralingredient1
+geraniumingredient1
 15.000000
 kg
-centralingredient2
+geraniumingredient2
 2.000000
 tsp
-centralingredient3
+geraniumingredient3
 5.000000
 cups
