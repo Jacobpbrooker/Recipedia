@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="admin.c" />
+    <ClCompile Include="display.c" />
     <ClCompile Include="queue.c" />
     <ClCompile Include="restaurant.c" />
     <ClCompile Include="SaveLoad.c" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="admin.h" />
+    <ClInclude Include="display.h" />
     <ClInclude Include="queue.h" />
     <ClInclude Include="restaurant.h" />
     <ClInclude Include="SaveLoad.h" />
