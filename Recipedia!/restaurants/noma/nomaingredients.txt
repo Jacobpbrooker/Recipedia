@@ -1,9 +1,9 @@
-nomaingredient1
+disfrutaringredient1
 15.000000
 kg
-nomaingredient2
+disfrutaringredient2
 2.000000
 tsp
-nomaingredient3
+disfrutaringredient3
 5.000000
 cups

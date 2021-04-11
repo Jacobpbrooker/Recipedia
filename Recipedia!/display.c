@@ -1,7 +1,7 @@
 #include "display.h"
 #include <stdio.h>
 
-void displayMenu()
+void displayMainMenu()
 {
 	printf("Welcome to Recipedia!\n");
 	printf("Please select an option:\n");

@@ -2,7 +2,7 @@
 
 #include "restaurant.h"
 
-void displayMenu();
+void displayMainMenu();
 void displaySearch();
 void displayRestaurant(PRESTAURANT);
 void displayAllRestaurants(PRESTAURANT);
