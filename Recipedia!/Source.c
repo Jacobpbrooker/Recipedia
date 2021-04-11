@@ -1,7 +1,7 @@
 /*
-
-
-
+RECIPEDIA
+By: Jacob, Mason, Raven, Torin
+Apr, 2021
 
 */
 
