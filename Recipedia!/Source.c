@@ -20,7 +20,7 @@ Apr, 2021
 
 int main(int argc, char* argv[])
 {
-	int restaurantSelect;
+	
 	srand(time(NULL));
 	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
 	//saveFile(restaurantList, RECIPEDIADIRECTORY);
@@ -52,18 +52,46 @@ int main(int argc, char* argv[])
 			case 1://search for restaurant
 			{
 				displayAllRestaurants(restaurantList);
-				printf("Please choose a restaurant to view: ");
-				scanf_s("%d", &restaurantSelect);
-				displayRestaurant(searchNum(restaurantList, restaurantSelect));
+				char* restaurantSelect = (char*)malloc(sizeof(char)*100);
+				if (!restaurantSelect)
+					exit(EXIT_FAILURE);
 
+				memset(restaurantSelect, '\0', 100);
+
+				printf("Please enter a restaurant name: ");
+				//fgets(restaurantSelect, 100, stdin);
+				scanf_s("%s", restaurantSelect, 100);
+
+				PRESTAURANTNODE restSearch = searchRestaurant(restaurantList, restaurantSelect);
+				if (restSearch == NULL)
+				{
+					PRESTAURANTNODE recipeSearch = searchRecipe(restaurantList, restaurantSelect);
+					if (recipeSearch != NULL)
+					{
+						displayRestaurant(recipeSearch);
+					}
+					else
+					{
+						break;
+					}
+				}
+				else
+				{
+					printf("Sorry nothing was found on your input\n");
+				}
+
+				break;
 			}
 			case 2://Random restaurant
 			{
+				displayRestaurant(searchNum(restaurantList, randomSearch()));
 
+				break;
 			}
 			case 3://Display all restaurants
 			{
 				displayAllRestaurants(restaurantList);
+				break;
 			}
 			case 4://exit
 			{
