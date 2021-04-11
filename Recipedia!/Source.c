@@ -20,16 +20,17 @@ Apr, 2021
 
 int main(int argc, char* argv[])
 {
+	int restaurantSelect;
 	srand(time(NULL));
 	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
-	saveFile(restaurantList, RECIPEDIADIRECTORY);
+	//saveFile(restaurantList, RECIPEDIADIRECTORY);
 	//freeRestaurantList(restaurantList);
-	if (!saveFile(restaurantList, RECIPEDIADIRECTORY))
-		exit(EXIT_FAILURE);
+	//if (!saveFile(restaurantList, RECIPEDIADIRECTORY))
+	//	exit(EXIT_FAILURE);
 
 	//exit(EXIT_SUCCESS);
 	
-	/*bool adminAccess = returnAdminConfirmation(argv[1], strlen(argv[1]));
+	bool adminAccess = returnAdminConfirmation(argv[1], strlen(argv[1]));
 
 	if (adminAccess)
 	{
@@ -44,21 +45,25 @@ int main(int argc, char* argv[])
 
 		bool keepGoing = true;
 		do {
-			//displayMainMenu()
+			displayMainMenu();
 
 			switch (mainMenuInput())
 			{
 			case 1://search for restaurant
 			{
+				displayAllRestaurants(restaurantList);
+				printf("Please choose a restaurant to view: ");
+				scanf_s("%d", &restaurantSelect);
+				displayRestaurant(searchNum(restaurantList, restaurantSelect));
 
 			}
-			case 2://search for recipe
+			case 2://Random restaurant
 			{
 
 			}
-			case 3://random search
+			case 3://Display all restaurants
 			{
-
+				displayAllRestaurants(restaurantList);
 			}
 			case 4://exit
 			{
@@ -73,7 +78,7 @@ int main(int argc, char* argv[])
 
 
 	}
-	*/
+	
 	//loadOrCreate(RECIPEDIALOADFILE);
 	//PRESTAURANTNODE	restaurantList = loadOrCreate(RECIPEDIALOADFILE);
 

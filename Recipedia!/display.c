@@ -16,35 +16,27 @@ void displaySearch()
 	printf("Please enter a restaurant name: ");
 }
 
-void displayRestaurant(PRESTAURANT r)
+void displayRestaurant(PRESTAURANTNODE r)
 {
-	printf("Name - %s\n", r->restaurantName);
-	printf("Location - %s\n", r->restaurantSypnopsis);
-	printf("Executive Chef - %s\n", r->headChef);
+	printf("Name - %s\n", r->restaurant.restaurantName);
+	printf("Location - %s\n", r->restaurant.restaurantSypnopsis);
+	printf("Executive Chef - %s\n", r->restaurant.headChef);
 	printf("Specials - \n");
 
 	for (int i = 0; i < MENUSIZE; i++)
 	{
-		printf("%s", r->specialityMenu[i]);
+		printf("%s", r->restaurant.specialityMenu[i]);
 	}
 
 	printf("Would you like to see the recipes for today's dishes? (Y/N): ");
 }
 
-void displayAllRestaurants(PRESTAURANT r)
+void displayAllRestaurants(PRESTAURANTNODE r)
 {
-	PRESTAURANT p;
-
-	printf("%s\n", r->restaurantName);
-
-	p = fetchNextNode(r);
-	printf("%s\n", p->restaurantName);
-
-	while (p->restaurantName != NULL)
-	{
-		p = fetchNextNode(p);
-		printf("%s\n", p->restaurantName);
-	}
+	if (r == NULL)
+		return;
+	printf("%s\n", r->restaurant.restaurantName);
+	displayAllRestaurants(r->nextNode);
 }
 
 void displayRecipe(PINSTRUCTIONQUEUE q)

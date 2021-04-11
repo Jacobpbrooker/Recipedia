@@ -16,12 +16,6 @@ int mainMenuInput()
 
 	while (userInput != 1 || userInput != 2 || userInput != 3 || userInput != 4)
 	{
-		if (userInput != 1 || userInput != 2 || userInput != 3 || userInput != 4)
-		{
-			printf("Please select one of the options provided: ");
-			scanf_s("%ch", &userInput);
-		}
-
 		switch (userInput)
 		{
 		case'1':
@@ -37,6 +31,12 @@ int mainMenuInput()
 			return 4;
 
 		}
+		if (userInput != 1 || userInput != 2 || userInput != 3 || userInput != 4)
+		{
+			printf("Please select one of the options provided: ");
+			scanf_s("%ch", &userInput);
+		}
+	
 	}
 
 }
