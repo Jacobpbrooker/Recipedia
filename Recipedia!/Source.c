@@ -23,10 +23,6 @@ int main(int argc, char* argv[])
 	
 	srand(time(NULL));
 	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
-	//saveFile(restaurantList, RECIPEDIADIRECTORY);
-	//freeRestaurantList(restaurantList);
-	//if (!saveFile(restaurantList, RECIPEDIADIRECTORY))
-	//	exit(EXIT_FAILURE);
 
 	//exit(EXIT_SUCCESS);
 	
@@ -112,6 +108,10 @@ int main(int argc, char* argv[])
 	//saveFile(restaurantList);
 
 	
+	//saveFile(restaurantList, RECIPEDIADIRECTORY);
 	
+	/*if (!saveFile(restaurantList, RECIPEDIADIRECTORY))
+		exit(EXIT_FAILURE);*/
+	//freeRestaurantList(restaurantList);
 	exit(EXIT_SUCCESS);
 }
