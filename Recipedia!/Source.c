@@ -22,17 +22,8 @@ Apr, 2021
 int main(int argc, char* argv[])
 {
 	
-	//srand(time(NULL));
+	srand(time(NULL));
 	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
-
-	saveFile(restaurantList, RECIPEDIADIRECTORY);
-	char* testNull = "hello\n";
-	char* testNewLine = "hello\0";
-	char* what;
-	testNull = nullTerminate(testNull);
-
-	testNewLine = newLineTerminate(testNewLine);
-	//exit(EXIT_SUCCESS);
 	
 	bool adminAccess = returnAdminConfirmation(argv[1], strlen(argv[1]));
 
@@ -109,17 +100,9 @@ int main(int argc, char* argv[])
 
 
 	}
-	
-	//loadOrCreate(RECIPEDIALOADFILE);
-	//PRESTAURANTNODE	restaurantList = loadOrCreate(RECIPEDIALOADFILE);
 
-	//saveFile(restaurantList);
-
-	
+	// Do not uncomment
 	//saveFile(restaurantList, RECIPEDIADIRECTORY);
-	
-	/*if (!saveFile(restaurantList, RECIPEDIADIRECTORY))
-		exit(EXIT_FAILURE);*/
-	//freeRestaurantList(restaurantList);
+
 	exit(EXIT_SUCCESS);
 }
