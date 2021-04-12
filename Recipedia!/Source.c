@@ -24,6 +24,7 @@ int main(int argc, char* argv[])
 	
 	//srand(time(NULL));
 	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
+
 	saveFile(restaurantList, RECIPEDIADIRECTORY);
 	char* testNull = "hello\n";
 	char* testNewLine = "hello\0";
