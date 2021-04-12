@@ -4,6 +4,6 @@
 
 void displayMainMenu();
 void displaySearch();
-void displayRestaurant(PRESTAURANT);
-void displayAllRestaurants(PRESTAURANT);
+void displayRestaurant(PRESTAURANTNODE);
+void displayAllRestaurants(PRESTAURANTNODE);
 void displayRecipe(PRESTAURANT);

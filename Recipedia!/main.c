@@ -6,23 +6,18 @@
 #include <stdbool.h>
 #include "main.h"
 
+#define MAX_CHAR 100
 
-int mainMenuInput()
+int mainMenuInput(void)
 {
-	char userInput;
+	char userInput[MAX_CHAR] = { '\0' };
 
 	printf("Which action do you wish to take:");
-	scanf_s("%ch", &userInput);
-
-	while (userInput != 1 || userInput != 2 || userInput != 3 || userInput != 4)
+	scanf_s("%s", &userInput, MAX_CHAR);
+	char selection = userInput[0];
+	while (selection != '1' || selection != '2' || selection != '3' || selection != '4')
 	{
-		if (userInput != 1 || userInput != 2 || userInput != 3 || userInput != 4)
-		{
-			printf("Please select one of the options provided: ");
-			scanf_s("%ch", &userInput);
-		}
-
-		switch (userInput)
+		switch (selection)
 		{
 		case'1':
 			return 1;
@@ -37,19 +32,24 @@ int mainMenuInput()
 			return 4;
 
 		}
+		if (selection != '1' || selection != '2' || selection != '3' || selection != '4')
+		{
+			printf("Please select one of the options provided: ");
+			scanf_s("%s", &userInput, MAX_CHAR);
+			selection = userInput[0];
+		}
 	}
-
 }
-/*
-int randomSearch()
+
+int randomSearch(void)
 {
-	int length_of_list; //=length of restaurant list
+	int length_of_list = RESTAURANT_LIST_SIZE;
 	int randomNumber = 1;
 
-	randomNumber = rand() % length_of_list;
+	randomNumber = (rand() % length_of_list) + 1;
 
 
 return randomNumber;
 }
-*/
+
 
