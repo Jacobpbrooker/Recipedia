@@ -59,7 +59,6 @@ int main(int argc, char* argv[])
 				memset(restaurantSelect, '\0', 100);
 
 				printf("Please enter a restaurant name: ");
-				//fgets(restaurantSelect, 100, stdin);
 				scanf_s("%s", restaurantSelect, 100);
 
 				PRESTAURANTNODE restSearch = searchRestaurant(restaurantList, restaurantSelect);
