@@ -1,5 +1,6 @@
 #pragma once
 
+#include "returnArrays.h"
 #include "queue.h"
 #define RECIPEDIADIRECTORY "restaurants/toptenrestaurants.txt"
 

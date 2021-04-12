@@ -148,6 +148,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="queue.c" />
     <ClCompile Include="restaurant.c" />
+    <ClCompile Include="returnArray.c" />
     <ClCompile Include="SaveLoad.c" />
     <ClCompile Include="search.c" />
     <ClCompile Include="Source.c" />
@@ -158,6 +159,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="queue.h" />
     <ClInclude Include="restaurant.h" />
+    <ClInclude Include="returnArrays.h" />
     <ClInclude Include="SaveLoad.h" />
     <ClInclude Include="search.h" />
   </ItemGroup>

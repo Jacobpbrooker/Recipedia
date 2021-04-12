@@ -15,15 +15,22 @@ Apr, 2021
 #include "restaurant.h"
 #include "SaveLoad.h"
 #include "main.h"
+#include "returnArrays.h"
 
 #define MAXUSERNAME 50
 
 int main(int argc, char* argv[])
 {
 	
-	srand(time(NULL));
+	//srand(time(NULL));
 	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
+	saveFile(restaurantList, RECIPEDIADIRECTORY);
+	char* testNull = "hello\n";
+	char* testNewLine = "hello\0";
+	char* what;
+	testNull = nullTerminate(testNull);
 
+	testNewLine = newLineTerminate(testNewLine);
 	//exit(EXIT_SUCCESS);
 	
 	bool adminAccess = returnAdminConfirmation(argv[1], strlen(argv[1]));

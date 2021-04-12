@@ -50,6 +50,7 @@ PRESTAURANTNODE loadRestaurants(char* filename)
 		fgets(restaurantFiles[i], MAXSTRINGLENGTH, fp);
 
 		// this will add the terminator to each of the char strings added
+		//strcpy_s(restaurantFiles[i], MAXSTRINGLENGTH, nullTerminate(restaurantFiles[i]));
 		for (unsigned int j = 0; j < strlen(restaurantFiles[i]); j++)
 		{
 			if (restaurantFiles[i][j] == '\n')
@@ -96,9 +97,17 @@ bool saveFile(PRESTAURANTNODE list, char* filename)
 
 	for (int i = 0; i < lines; i++)
 	{
+		// this loop will add all the restaurants to a list
 		fgets(restaurantFiles[i], MAXSTRINGLENGTH, fp);
 
+	}
+
+	// now I need a loop that saves them backwards
+
+	for (int i = 9; i > 0; i--)
+	{
 		// this will add the terminator to each of the char strings added
+
 		for (unsigned int j = 0; j < strlen(restaurantFiles[i]); j++)
 		{
 			if (restaurantFiles[i][j] == '\n')
@@ -111,7 +120,7 @@ bool saveFile(PRESTAURANTNODE list, char* filename)
 		saveRestaurantInfo(list, getRestaurantFileName(restaurantFiles[i]));
 		saveIngredients(list, getIngredientsFileName(restaurantFiles[i]));
 		saveInstructions(list, getInstructionsFileName(restaurantFiles[i]));
-		
+
 		// Move the list to the next node
 		list = list->nextNode;
 	}
