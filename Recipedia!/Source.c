@@ -66,19 +66,21 @@ int main(int argc, char* argv[])
 					}
 					else
 					{
+						printf("Sorry nothing was found on your input\n");
 						break;
 					}
 				}
 				else
 				{
-					printf("Sorry nothing was found on your input\n");
+					displayRestaurant(restSearch);
 				}
 
 				break;
 			}
 			case 2://Random restaurant
 			{
-				displayRestaurant(searchNum(restaurantList, randomSearch()));
+				PRESTAURANTNODE randomnode = searchNum(restaurantList, randomSearch());
+				displayRestaurant(randomnode);
 
 				break;
 			}
