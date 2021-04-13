@@ -16,12 +16,14 @@ Apr, 2021
 #include "SaveLoad.h"
 #include "main.h"
 #include "returnArrays.h"
+#include "display.h"
 
 #define MAXUSERNAME 50
 
 int main(int argc, char* argv[])
 {
-	
+	//ColourdisplayMainMenu();
+	//printf("Test (shouldnt be colorured)\n");
 	srand(time(NULL));
 	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
 	
