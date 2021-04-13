@@ -45,11 +45,10 @@ PRESTAURANTNODE loadRestaurants(char* filename)
 
 	for (int i = 0; i < lines; i++)
 	{
-
-
 		fgets(restaurantFiles[i], MAXSTRINGLENGTH, fp);
 
 		// this will add the terminator to each of the char strings added
+		//strcpy_s(restaurantFiles[i], MAXSTRINGLENGTH, nullTerminate(restaurantFiles[i]));
 		for (unsigned int j = 0; j < strlen(restaurantFiles[i]); j++)
 		{
 			if (restaurantFiles[i][j] == '\n')
@@ -96,9 +95,17 @@ bool saveFile(PRESTAURANTNODE list, char* filename)
 
 	for (int i = 0; i < lines; i++)
 	{
+		// this loop will add all the restaurants to a list
 		fgets(restaurantFiles[i], MAXSTRINGLENGTH, fp);
 
+	}
+
+	// now I need a loop that saves them backwards
+
+	for (int i = 9; i > 0; i--)
+	{
 		// this will add the terminator to each of the char strings added
+
 		for (unsigned int j = 0; j < strlen(restaurantFiles[i]); j++)
 		{
 			if (restaurantFiles[i][j] == '\n')
@@ -111,7 +118,7 @@ bool saveFile(PRESTAURANTNODE list, char* filename)
 		saveRestaurantInfo(list, getRestaurantFileName(restaurantFiles[i]));
 		saveIngredients(list, getIngredientsFileName(restaurantFiles[i]));
 		saveInstructions(list, getInstructionsFileName(restaurantFiles[i]));
-		
+
 		// Move the list to the next node
 		list = list->nextNode;
 	}
@@ -225,41 +232,23 @@ void saveRestaurantInfo(PRESTAURANTNODE list, char* filename)
 		exit(EXIT_FAILURE);
 	}
 	
-	// i need to find the \0 and replace with \n (only the first one)
-	// this is literally the jankiest thing I have ever written
+	list->restaurant.restaurantName[strlen(list->restaurant.restaurantName)] = '\n';
+	list->restaurant.headChef[strlen(list->restaurant.headChef)] = '\n';
+	list->restaurant.restaurantSypnopsis[strlen(list->restaurant.restaurantSypnopsis)] = '\n';
 
-	int i = 0;
-	while (list->restaurant.restaurantName[i] != '\0')
-		i++;
-	list->restaurant.restaurantName[i] = '\n';
-
-	i = 0;
-	while (list->restaurant.headChef[i] != '\0')
-		i++;
-	list->restaurant.headChef[i] = '\n';
-
-	i = 0;
-	while (list->restaurant.restaurantSypnopsis[i] != '\0')
-		i++;
-	list->restaurant.restaurantSypnopsis[i] = '\n';
-
-	i = 0;
-	while (list->restaurant.specialityMenu[0][i] != '\0')
-		i++;
-	list->restaurant.specialityMenu[0][i] = '\n';
-	list->restaurant.specialityMenu[0][++i] = '\0';
-
-	i = 0;
-	while (list->restaurant.specialityMenu[1][i] != '\0')
-		i++;
-	list->restaurant.specialityMenu[1][i] = '\n';
-	list->restaurant.specialityMenu[1][++i] = '\0';
-
-	i = 0;
-	while (list->restaurant.specialityMenu[2][i] != '\0')
-		i++;
-	list->restaurant.specialityMenu[2][i] = '\n';
-	list->restaurant.specialityMenu[2][++i] = '\0';
+	for (int i = 0; i < 3; i++)
+	{
+		list->restaurant.specialityMenu[i][strlen(list->restaurant.specialityMenu[i])] = '\n';
+		//list->restaurant.specialityMenu[i][strlen(list->restaurant.specialityMenu[i])+1] = '\0';
+		for (unsigned int j = 0; j < strlen(list->restaurant.specialityMenu[i]); j++)
+		{
+			if (list->restaurant.specialityMenu[i][j] == '\n')
+			{
+				j++;
+				list->restaurant.specialityMenu[i][j] = '\0';
+			}
+		}
+	}
 
 	// write the restaurant information to txt file 
 	fputs(list->restaurant.restaurantName, fp);
@@ -268,6 +257,8 @@ void saveRestaurantInfo(PRESTAURANTNODE list, char* filename)
 	fputs(list->restaurant.specialityMenu[0], fp);
 	fputs(list->restaurant.specialityMenu[1], fp);
 	fputs(list->restaurant.specialityMenu[2], fp);
+
+	fclose(fp);
 }
 
 void saveIngredients(PRESTAURANTNODE list, char* filename)
