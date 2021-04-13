@@ -15,7 +15,7 @@ int mainMenuInput(void)
 	printf("Which action do you wish to take:");
 	scanf_s("%s", &userInput, MAX_CHAR);
 	char selection = userInput[0];
-	while (selection != '1' || selection != '2' || selection != '3' || selection != '4')
+	while (selection != '1' || selection != '2' || selection != '3' || selection != '0')
 	{
 		switch (selection)
 		{
@@ -28,8 +28,8 @@ int mainMenuInput(void)
 		case'3':
 			return 3;
 
-		case'4':
-			return 4;
+		case'0':
+			return 0;
 
 		}
 		if (selection != '1' || selection != '2' || selection != '3' || selection != '4')
