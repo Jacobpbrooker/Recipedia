@@ -11,4 +11,4 @@ PRESTAURANTNODE recursiveFindAndDeleteRestaurant(PRESTAURANTNODE, char*);
 void addRestaurant(PRESTAURANTNODE);
 
 //admin displays
-void displayMenu(void);
+void displayAdminMenu(void);

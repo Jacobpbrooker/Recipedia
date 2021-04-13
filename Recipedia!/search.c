@@ -14,6 +14,7 @@ PRESTAURANTNODE searchNum(PRESTAURANTNODE r, int input)
 
 	return copy;
 }
+
 PRESTAURANTNODE searchRestaurant(PRESTAURANTNODE r, char* input)
 {
 	PRESTAURANTNODE copy = r;

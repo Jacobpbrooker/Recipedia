@@ -75,7 +75,7 @@ void adminMode(PRESTAURANTNODE restaurantList)
 	//char restaurantDelete[RESTAURANTNAME];
 	char* testRestaurantDelete = "maidotestname3\0";
 	do {
-		displayMenu();
+		displayAdminMenu();
 		//scanf_s("%d", &userSelection);
 		switch (userSelection)
 		{
@@ -142,7 +142,7 @@ void addRestaurant(PRESTAURANTNODE restaurantList)
 	tempNode->nextNode = createRestaurant(tempNode->nextNode, returnNewRestaurant());
 }
 
-void displayMenu(void)
+void displayAdminMenu(void)
 {
 	printf("Welcome to Adminstrator Menu for Recipedia\n\n");
 	printf("Sections\n");
