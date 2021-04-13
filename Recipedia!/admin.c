@@ -5,6 +5,7 @@
 
 #include "admin.h"
 //#include "restaurant.h"
+#include "search.h"
 
 #define ADMINCODE 0x99										// this makes the admin code 1001 1001
 #define RESTAURANTNAME 50
@@ -71,22 +72,22 @@ bool returnAdminConfirmation(unsigned char* commandLineCode, int codeLength)
 
 void adminMode(PRESTAURANTNODE restaurantList)
 {
-	int userSelection = 2;
+	int userSelection;
 	//char restaurantDelete[RESTAURANTNAME];
 	char* testRestaurantDelete = "maidotestname3\0";
+	char restaurant[MAXSTRINGLENGTH] = { '\0' };
 	do {
 		displayAdminMenu();
-		//scanf_s("%d", &userSelection);
+		scanf_s("%d", &userSelection);
 		switch (userSelection)
 		{
 		case 1:
 			printf("You have selected remove restaurant\n");
+			displayAllRestaurants(restaurantList);
 			printf("Enter name of restaurant to be deleted\n");
 			printf("Restuarant - ");
-			//restaurantList = deleteRestaurant(restaurantList, testRestaurantDelete);
-			//scanf_s("%s", restaurantDelete, RESTAURANTNAME);
-			//find and delete(free) the node on the linked list
-
+			restaurantList = deleteRestaurant(restaurantList, testRestaurantDelete);
+			displayAllRestaurants(restaurantList);
 			break;
 		case 2:
 			printf("You have selected add new restaurant\n");
@@ -144,6 +145,14 @@ void addRestaurant(PRESTAURANTNODE restaurantList)
 
 void displayAdminMenu(void)
 {
+	printf("\x1b[%dm", BRIGHT_GREEN_FG);
+	printf("\t   _   ___  __  __ ___ _  _				\n");
+	printf("\t  /_\\ |   \\|  \\/  |_ _| \\| |			\n");
+	printf("\t / _ \\| |) | |\\/| || || .` |			\n");
+	printf("\t/_/ \\_|___/|_|  |_|___|_|\\_|	\n");
+	printf("\x1b[%dm", DEFAULT_FG);
+	printf("\n");
+
 	printf("Welcome to Adminstrator Menu for Recipedia\n\n");
 	printf("Sections\n");
 	printf("1 - Delete Restaurant\n");
