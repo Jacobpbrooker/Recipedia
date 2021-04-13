@@ -1,5 +1,6 @@
 #pragma once
 #include "restaurant.h"
+#include "display.h"
 // accessing admin mode
 unsigned char* convertCharToBits(char*, int);
 bool returnAdminConfirmation(unsigned char*, int);

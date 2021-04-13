@@ -42,7 +42,8 @@ int main(int argc, char* argv[])
 
 		bool keepGoing = true;
 		do {
-			displayMainMenu();
+			colourDisplayMainMenu();
+			//displayMainMenu();
 
 			switch (mainMenuInput())
 			{
@@ -55,7 +56,9 @@ int main(int argc, char* argv[])
 
 				memset(restaurantSelect, '\0', 100);
 
-				printf("Please enter a restaurant name: ");
+				printf("\x1b[%dm", BRIGHT_GREEN_FG);
+				printf("\nPlease enter a restaurant name: ");
+				printf("\x1b[%dm", DEFAULT_FG);
 				scanf_s("%s", restaurantSelect, 100);
 
 				PRESTAURANTNODE restSearch = searchRestaurant(restaurantList, restaurantSelect);
@@ -68,7 +71,10 @@ int main(int argc, char* argv[])
 					}
 					else
 					{
+						printf("\x1b[%dm", BRIGHT_RED_FG);
 						printf("Sorry nothing was found on your input\n");
+						printf("\x1b[%dm", DEFAULT_FG);
+						printf("Returning to main menu!\n");
 						break;
 					}
 				}
@@ -91,7 +97,7 @@ int main(int argc, char* argv[])
 				displayAllRestaurants(restaurantList);
 				break;
 			}
-			case 4://exit
+			case 0://exit
 			{
 				printf("Exiting...\n");
 				keepGoing = false;
