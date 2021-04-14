@@ -63,19 +63,20 @@ void displayRestaurant(PRESTAURANTNODE r)
 	{
 		printf("%s\n", r->restaurant.specialityMenu[i]);
 	}
-
+	printf("\n");
 	printf("Would you like to see the recipes for today's dishes?\n");
 	printf("1 - Yes\n2 - No\n");
 	printf("Selection - ");
 	
 	int selection;
-scanf_s("%d", &selection);
+	scanf_s("%d", &selection);
 	switch (selection)
 	{
 	default:
 		printf("Selection not valid, exiting to main menu\n");
 		break;
 	case 1:
+		printf("\n");
 		displayIngredients(r);
 		displayRecipe(r);
 		break;
