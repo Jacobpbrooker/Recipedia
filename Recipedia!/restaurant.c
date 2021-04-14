@@ -227,11 +227,13 @@ PRESTAURANTNODE fetchNextNode(PRESTAURANTNODE restaurantNode)
 
 PRESTAURANT returnNewRestaurant(void)
 {
-	PRESTAURANT newRestaurant = (PRESTAURANT)malloc(sizeof(PRESTAURANT));
+	PRESTAURANT newRestaurant = (PRESTAURANT)malloc(sizeof(RESTAURANT));
+	if (!newRestaurant)
+		exit(EXIT_FAILURE);
 
-	newRestaurant->restaurantName = (char*)malloc(MAXINPUT);
-	newRestaurant->headChef = (char*)malloc(MAXINPUT);
-	newRestaurant->restaurantSypnopsis = (char*)malloc(MAXINPUT);
+	newRestaurant->restaurantName = (char*)malloc(sizeof(char) * MAXINPUT);
+	newRestaurant->headChef = (char*)malloc(sizeof(char) * MAXINPUT);
+	newRestaurant->restaurantSypnopsis = (char*)malloc(sizeof(char) * MAXINPUT);
 
 	char name[MAXINPUT];
 	char chef[MAXINPUT];
@@ -245,7 +247,7 @@ PRESTAURANT returnNewRestaurant(void)
 	printf("Please enter restaurant name - ");
 	fgets(name, MAXINPUT, stdin);
 
-	printf("\nPlease enter chef name - ");
+	printf("Please enter chef name - ");
 	fgets(chef, MAXINPUT, stdin);
 
 	printf("Please enter restaurant sypnopsis - ");
