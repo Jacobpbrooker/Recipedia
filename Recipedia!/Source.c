@@ -9,6 +9,7 @@ Apr, 2021
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <time.h>
 
 #include "admin.h"
 #include "queue.h"
@@ -37,12 +38,10 @@ int main(int argc, char* argv[])
 	{
 		char userName[MAXUSERNAME];
 		strcpy_s(userName, MAXUSERNAME, argv[1]);
-
+		printf("Hello - %s\n\n", userName);
 		bool keepGoing = true;
 		do {
 			colourDisplayMainMenu();
-			//displayMainMenu();
-
 			switch (mainMenuInput())
 			{
 			case 1://search for restaurant
