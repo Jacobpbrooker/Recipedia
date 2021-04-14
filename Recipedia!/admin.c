@@ -86,7 +86,13 @@ void adminMode(PRESTAURANTNODE restaurantList)
 			displayAllRestaurants(restaurantList);
 			printf("Enter name of restaurant to be deleted\n");
 			printf("Restuarant - ");
-			restaurantList = deleteRestaurant(restaurantList, testRestaurantDelete);
+			scanf_s("%s", restaurant, MAXSTRINGLENGTH);
+			for (unsigned int i = 0; i < strlen(restaurant); i++)
+			{
+				if (restaurant[i] == '\n')
+					restaurant[i] = '\0';
+			}
+			restaurantList = deleteRestaurant(restaurantList, restaurant);
 			displayAllRestaurants(restaurantList);
 			break;
 		case 2:
