@@ -239,11 +239,13 @@ PRESTAURANT returnNewRestaurant(void)
 	char one[MAXINPUT];
 	char two[MAXINPUT];
 	char three[MAXINPUT];
+	char test[50];
+	fgets(test, 50, stdin);
 
 	printf("Please enter restaurant name - ");
 	fgets(name, MAXINPUT, stdin);
 
-	printf("Please enter chef name - ");
+	printf("\nPlease enter chef name - ");
 	fgets(chef, MAXINPUT, stdin);
 
 	printf("Please enter restaurant sypnopsis - ");

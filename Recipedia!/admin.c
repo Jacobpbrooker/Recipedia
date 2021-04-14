@@ -86,13 +86,23 @@ void adminMode(PRESTAURANTNODE restaurantList)
 			displayAllRestaurants(restaurantList);
 			printf("Enter name of restaurant to be deleted\n");
 			printf("Restuarant - ");
-			restaurantList = deleteRestaurant(restaurantList, testRestaurantDelete);
+			scanf_s("%s", restaurant, MAXSTRINGLENGTH);
+			for (unsigned int i = 0; i < strlen(restaurant); i++)
+			{
+				if (restaurant[i] == '\n')
+					restaurant[i] = '\0';
+			}
+			restaurantList = deleteRestaurant(restaurantList, restaurant);
 			displayAllRestaurants(restaurantList);
 			break;
 		case 2:
 			printf("You have selected add new restaurant\n");
 			addRestaurant(restaurantList);
+			displayAllRestaurants(restaurantList);
 			break;
+		case 0:
+			printf("Now Exiting Admin mode!\n");
+			return;
 		default:
 			break;
 		}
@@ -157,6 +167,9 @@ void displayAdminMenu(void)
 	printf("Sections\n");
 	printf("1 - Delete Restaurant\n");
 	printf("2 - Add Restaurant\n");
+	printf("\x1b[%dm", LIGHT_RED_FG);
+	printf("0 - Exit Admin mode\n");
+	printf("\x1b[%dm", DEFAULT_FG);
 	printf("Selection - ");
 }
 
