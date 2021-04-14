@@ -137,7 +137,7 @@ void recursiveDisplayIngredients(PINGREDIENT p)
 		return;
 	else
 	{
-		printf("%f ", p->measurement);
+		printf("%.2f ", p->measurement);
 		printf("%s - ", p->unitOfMeasurement);
 		printf("%s \n", p->ingredient);
 	}
