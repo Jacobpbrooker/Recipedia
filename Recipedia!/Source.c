@@ -22,8 +22,6 @@ Apr, 2021
 
 int main(int argc, char* argv[])
 {
-	//ColourdisplayMainMenu();
-	//printf("Test (shouldnt be colorured)\n");
 	srand(time(NULL));
 	PRESTAURANTNODE	restaurantList = loadRestaurants(RECIPEDIADIRECTORY);
 	
