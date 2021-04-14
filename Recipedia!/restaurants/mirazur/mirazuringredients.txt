@@ -1,9 +1,57 @@
-mirazuringredient1
-15.000000
-kg
-mirazuringredient2
-2.000000
-tsp
-mirazuringredient3
-5.000000
+Frozen Puff Pasty
+2
+Sheets
+Egg
+1
+large
+Water
+1
+teaspoon
+Goat Cheese
+1.25
 cups
+Salt and Pepper
+1
+pinch
+Cayenne
+1
+pinch
+Dill
+1.25
+tablespoons
+Fresh Parsley
+1.25
+tablespoons
+Lemon Thyme
+1
+tablespoon
+Heavy Cream
+0.25
+cups
+Romanesco broccoli florets
+1
+cups
+Fresh Asparagus Spears
+0.75
+cups
+Carrots
+0.75
+cups
+Sugar Snap Peas
+8
+units
+Mixed Salad Greens
+2
+cups
+Olive Oil
+0.25
+cups
+Lemon
+1
+units
+Watermelon Radish
+0.25
+cups
+Cherry Tomatoes
+0.25
+pint
