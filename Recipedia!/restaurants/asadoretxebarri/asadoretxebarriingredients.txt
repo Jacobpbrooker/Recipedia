@@ -1,21 +1,21 @@
 cod kokotxas
-1.000000
+1
 kg
 extra virgin olive oil
-3.000000
+3 
 tbsp
 garlic cloves
-3.000000
+3 
 units
 flour
-1.000000
+1
 tbsp
 Fish Stock
-250.000000
+250
 ml
 Parsley
-4.000000
+4 
 tbsp
 Sea Salt
-1.000000
+1
 pinch

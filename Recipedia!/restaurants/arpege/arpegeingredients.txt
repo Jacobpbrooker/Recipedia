@@ -1,24 +1,24 @@
 Butter
-1.000000
+1
 oz
 Garlic clove
-1.000000
+1
 unit
 Turnips
-16.000000
+16
 oz
 Nutmeg
-1.000000
+1
 teaspoon
 Cream
-150.000000
+150 
 ml
 Water
-150.000000
+150
 ml
 Salt
-0.500000
+0.5
 teaspoon
 Black Pepper
-0.500000
+0.5
 teaspoon
