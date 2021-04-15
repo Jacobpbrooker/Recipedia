@@ -1,24 +1,24 @@
 Fennel
-1
+1.000000
 bulb
 Onion
-1
+1.000000
 unit
 Garlic
-4
+4.000000
 cloves
 Green Olives
-0.5
+0.500000
 cups
 Cod
-2
+2.000000
 pounds
 Parsley
-0.25
+0.250000
 cups
 Olive Oil
-1
+1.000000
 drizzle
 Lemon
-1
+1.000000
 unit

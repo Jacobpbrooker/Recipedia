@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
 	}
 
 	// Do not uncomment
-	//saveFile(restaurantList, RECIPEDIADIRECTORY);
+	saveFile(restaurantList, RECIPEDIADIRECTORY);
 
 	exit(EXIT_SUCCESS);
 }
