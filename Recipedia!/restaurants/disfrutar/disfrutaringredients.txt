@@ -1,30 +1,30 @@
 Garlic
-1
+1.000000
 clove
 Oregano
-2
+2.000000
 teaspoons
 Salt
-0.75
+0.750000
 teaspoons
 Red Pepper Flakes
-0.25
+0.250000
 teaspoons
 Olive Oil
-2
+2.000000
 tablespoons
 Shrimp
-10
+10.000000
 units
 Zucchini
-1
+1.000000
 units
 Cherry Tomatoes
-1
+1.000000
 pint
 Pita
-2
+2.000000
 units
 Feta
-0.33
+0.330000
 cups

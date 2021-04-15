@@ -1,36 +1,36 @@
 Wagyu Short Ribs
-4
+4.000000
 lbs
 Flour
-1.5
+1.500000
 cups
 Carrots
-2
+2.000000
 units
 Onions
-2
+2.000000
 units
 Celery
-2
+2.000000
 units
 Tomato Paste
-2
+2.000000
 cups
 Red Wine
-3
+3.000000
 cups
 Beed Broth
-4
+4.000000
 quarts
 Thyme
-1
+1.000000
 bunch
 Rosemary
-2
+2.000000
 springs
 Bay Leaves
-2
+2.000000
 units
 Parsley
-1
+1.000000
 bunch

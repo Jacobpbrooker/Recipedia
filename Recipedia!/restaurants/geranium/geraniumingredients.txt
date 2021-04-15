@@ -1,9 +1,9 @@
 Whole Trouts
-4
+4.000000
 units
 Kosher Salt
-0.5
+0.500000
 cups
 Brown Sugar
-0.5
+0.500000
 cups

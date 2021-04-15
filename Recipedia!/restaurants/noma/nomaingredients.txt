@@ -1,15 +1,15 @@
 Skin on Chicken Breasts
-6
+6.000000
 large
 Kosher Salt
-1
+1.000000
 teaspoon
 Lemon Pepper
-1
+1.000000
 cups
 Dried Thyme
-0.5
+0.500000
 teaspoon
 Dried Rosemary
-0.5
+0.500000
 teaspoon
