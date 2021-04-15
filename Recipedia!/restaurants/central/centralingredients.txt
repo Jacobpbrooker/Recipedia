@@ -1,18 +1,18 @@
 Red Snapper
-2
+2.000000
 lbs
 Lemon and Lime Juice
-0.5
+0.500000
 cup
 Red Onion
-1
+1.000000
 cups
 Tomatoes
-1
+1.000000
 cups
 Serrano Chili
-1
+1.000000
 unit
 Salt
-2
+2.000000
 teaspoons
