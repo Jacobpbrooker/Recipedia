@@ -1,9 +1,9 @@
-geraniumingredient1
-15.000000
-kg
-geraniumingredient2
-2.000000
-tsp
-geraniumingredient3
-5.000000
+Whole Trouts
+4
+units
+Kosher Salt
+0.5
+cups
+Brown Sugar
+0.5
 cups

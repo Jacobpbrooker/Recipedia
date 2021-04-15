@@ -1,9 +1,18 @@
-gagganingredient1
-15.000000
-kg
-gagganingredient2
-2.000000
-tsp
-gagganingredient3
-5.000000
+Yoghurt
+0.33
 cups
+Garlic Ginger
+1
+tsp
+Kashmiri Red Chili powder
+0.5 
+tsp
+Garam Masala
+0.5
+tsp
+Tandoori Masala
+1
+tsp
+Mustard Oil
+1
+tablespoon

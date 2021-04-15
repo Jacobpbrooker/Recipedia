@@ -1,9 +1,30 @@
-disfrutaringredient1
-15.000000
-kg
-disfrutaringredient2
-2.000000
-tsp
-disfrutaringredient3
-5.000000
+Garlic
+1
+clove
+Oregano
+2
+teaspoons
+Salt
+0.75
+teaspoons
+Red Pepper Flakes
+0.25
+teaspoons
+Olive Oil
+2
+tablespoons
+Shrimp
+10
+units
+Zucchini
+1
+units
+Cherry Tomatoes
+1
+pint
+Pita
+2
+units
+Feta
+0.33
 cups

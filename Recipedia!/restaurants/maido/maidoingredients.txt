@@ -1,9 +1,36 @@
-maidoingredient1
-15.000000
-kg
-maidoingredient2
-2.000000
-tsp
-maidoingredient3
-5.000000
+Wagyu Short Ribs
+4
+lbs
+Flour
+1.5
 cups
+Carrots
+2
+units
+Onions
+2
+units
+Celery
+2
+units
+Tomato Paste
+2
+cups
+Red Wine
+3
+cups
+Beed Broth
+4
+quarts
+Thyme
+1
+bunch
+Rosemary
+2
+springs
+Bay Leaves
+2
+units
+Parsley
+1
+bunch

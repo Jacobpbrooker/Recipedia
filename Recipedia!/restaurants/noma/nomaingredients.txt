@@ -1,9 +1,15 @@
-nomaingredient1
-15.000000
-kg
-nomaingredient2
-2.000000
-tsp
-nomaingredient3
-5.000000
+Skin on Chicken Breasts
+6
+large
+Kosher Salt
+1
+teaspoon
+Lemon Pepper
+1
 cups
+Dried Thyme
+0.5
+teaspoon
+Dried Rosemary
+0.5
+teaspoon

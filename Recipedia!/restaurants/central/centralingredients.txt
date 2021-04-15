@@ -1,9 +1,18 @@
-centralingredient1
-15.000000
-kg
-centralingredient2
-2.000000
-tsp
-centralingredient3
-5.000000
+Red Snapper
+2
+lbs
+Lemon and Lime Juice
+0.5
+cup
+Red Onion
+1
 cups
+Tomatoes
+1
+cups
+Serrano Chili
+1
+unit
+Salt
+2
+teaspoons

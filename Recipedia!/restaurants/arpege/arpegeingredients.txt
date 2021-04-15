@@ -1,9 +1,24 @@
-arpegeingredient1
-15.000000
-kg
-arpegeingredient2
-2.000000
-tsp
-arpegeingredient3
-5.000000
-cups
+Butter
+1
+oz
+Garlic clove
+1
+unit
+Turnips
+16
+oz
+Nutmeg
+1
+teaspoon
+Cream
+150 
+ml
+Water
+150
+ml
+Salt
+0.5
+teaspoon
+Black Pepper
+0.5
+teaspoon

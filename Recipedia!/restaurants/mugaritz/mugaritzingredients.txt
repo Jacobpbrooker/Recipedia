@@ -1,9 +1,24 @@
-mugaritzingredient1
-15.000000
-kg
-mugaritzingredient2
-2.000000
-tsp
-mugaritzingredient3
-5.000000
+Fennel
+1
+bulb
+Onion
+1
+unit
+Garlic
+4
+cloves
+Green Olives
+0.5
 cups
+Cod
+2
+pounds
+Parsley
+0.25
+cups
+Olive Oil
+1
+drizzle
+Lemon
+1
+unit
